@@ -10,7 +10,6 @@ namespace YapGetirCom.Model
     {
         public Category()
         {
-            Users = new HashSet<User>();
             Restaurants = new HashSet<Restaurant>();
             Products = new HashSet<Product>();
         }
@@ -18,10 +17,7 @@ namespace YapGetirCom.Model
         public string CategoryName { get; set; }
         public int CategoryTypeID { get; set; }
         public virtual CategoryType CategoryType { get; set; }
-
-        public virtual ICollection<User> Users { get; set; }
         public virtual ICollection<Restaurant> Restaurants { get; set; }
-
         public virtual ICollection<Product> Products { get; set; }
 
     }

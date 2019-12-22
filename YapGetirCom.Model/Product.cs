@@ -10,7 +10,7 @@ namespace YapGetirCom.Model
     {
         public Product()
         {
-            Users = new HashSet<User>();
+           
             Campaigns = new HashSet<Campaign>();
         }
         public int ProductID { get; set; }
@@ -18,10 +18,10 @@ namespace YapGetirCom.Model
         public int CategoryID { get; set; }
         public int SupplierID { get; set; }
         public decimal Price { get; set; }
-        public int UserID { get; set; }
+        
         public Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        
         public virtual ICollection<Campaign> Campaigns { get; set; }
 
     }

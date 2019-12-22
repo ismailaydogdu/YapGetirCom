@@ -12,6 +12,7 @@ namespace YapGetirCom.Model
         {
             Comments = new HashSet<Comment>();
             Materials = new HashSet<Material>();
+            Shareds = new HashSet<Shared>();
         }
         public int RecipeID { get; set; }
         public string RecipeName { get; set; }
@@ -25,5 +26,6 @@ namespace YapGetirCom.Model
 
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Material> Materials { get; set; }
+        public virtual ICollection<Shared> Shareds { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace YapGetirCom.Model
             Cooks = new HashSet<Cook>();
             Comments = new HashSet<Comment>();
             Campaigns = new HashSet<Campaign>();
+            Shareds = new HashSet<Shared>();
         }
         public int RestaurantID { get; set; }
         public string CompanyName { get; set; }
@@ -25,6 +26,7 @@ namespace YapGetirCom.Model
         public virtual ICollection<Cook> Cooks { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }
+        public virtual ICollection<Shared> Shareds { get; set; }
 
 
 

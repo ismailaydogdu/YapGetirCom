@@ -8,17 +8,14 @@ namespace YapGetirCom.Model
 {
     public class Scoring : BaseModel
     {
-        public Scoring()
-        {
-            Restaurants = new HashSet<Restaurant>();
-            Cooks = new HashSet<Cook>();
-            Recipes = new HashSet<Recipe>();
-        }
         public int ScoringID { get; set; }
-        public string ScoringType { get; set; }
+        public decimal Score { get; set; }
+        public int RestaurantID { get; set; }
+        public int CookID { get; set; }
+        public int RecipeID { get; set; }
 
-        public virtual ICollection<Restaurant> Restaurants { get; set; }
-        public virtual ICollection<Cook> Cooks { get; set; }
-        public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
+        public virtual Cook Cook { get; set; }
+        public virtual Recipe Recipe { get; set; }
     }
 }

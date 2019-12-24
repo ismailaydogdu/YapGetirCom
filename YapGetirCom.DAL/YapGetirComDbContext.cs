@@ -53,6 +53,10 @@ namespace YapGetirCom.DAL
         public DbSet<CategoryType> CategoryTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
+        public DbSet<Stock> Stocks  { get; set; }
+        public DbSet<ProductOrder> ProductOrders { get; set; }
+        public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
+
 
     }
 }

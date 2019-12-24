@@ -10,19 +10,21 @@ namespace YapGetirCom.Model
     {
         public Product()
         {
-            Users = new HashSet<User>();
-            Campaigns = new HashSet<Campaign>();
+            Materials = new HashSet<Material>();
+            ProductOrderDetails = new HashSet<ProductOrderDetail>();
         }
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int CategoryID { get; set; }
         public int SupplierID { get; set; }
         public decimal Price { get; set; }
-        public int UserID { get; set; }
+        public decimal Stock { get; set; }
+        public string Unit { get; set; }
         public Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
-        public virtual ICollection<User> Users { get; set; }
-        public virtual ICollection<Campaign> Campaigns { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
+        public virtual ICollection<ProductOrderDetail> ProductOrderDetails { get; set; }
+
 
     }
 }

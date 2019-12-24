@@ -12,9 +12,7 @@ namespace YapGetirCom.DAL.Mapping
     {
         public MaterialMapping()
         {
-            Property(x => x.MaterialName)
-                .IsRequired()
-                .HasMaxLength(30);
+      
             Property(x => x.MaterialMeasurement)
                 .IsRequired()
                 .HasMaxLength(50);

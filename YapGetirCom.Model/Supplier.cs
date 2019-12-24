@@ -10,7 +10,8 @@ namespace YapGetirCom.Model
     {
         public Supplier()
         {
-            Users = new HashSet<User>();
+            Stocks = new HashSet<Stock>();
+            ProductOrders = new HashSet<ProductOrder>();
         }
         public int SupplierID { get; set; }
         public string CompanyName { get; set; }
@@ -18,6 +19,9 @@ namespace YapGetirCom.Model
         public string City { get; set; }
         public string Phone { get; set; }
         public string Country { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<Stock> Stocks { get; set; }
+        public virtual ICollection<ProductOrder> ProductOrders { get; set; }
     }
 }

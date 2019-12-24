@@ -16,9 +16,8 @@ namespace YapGetirCom.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int RestaurantID { get; set; }
-        public int ScoringID { get; set; }
         public virtual Restaurant Restaurant { get; set; }
-        public virtual Scoring Scoring { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

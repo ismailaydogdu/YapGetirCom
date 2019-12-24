@@ -10,17 +10,19 @@ namespace YapGetirCom.Model
     {
         public Campaign()
         {
-            Products = new HashSet<Product>();
+            Users = new HashSet<User>();
+            Restaurants = new HashSet<Restaurant>();
+            Recipes = new HashSet<Recipe>();
         }
         public int CampaignID { get; set; }
         public string CampaignName { get; set; }
         public DateTime CampaignStartTime { get; set; }
         public DateTime CampaignFinishTime { get; set; }
-        public int ProductID { get; set; }
-        public int RestaurantID { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
-        public virtual Restaurant Restaurant { get; set; }
+
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Restaurant> Restaurants { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
 
     }
 }

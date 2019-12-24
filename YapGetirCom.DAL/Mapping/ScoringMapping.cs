@@ -12,9 +12,8 @@ namespace YapGetirCom.DAL.Mapping
     {
         public ScoringMapping()
         {
-            Property(x => x.ScoringType)
-                .IsRequired()
-                .HasMaxLength(30);
+           
+                
         }
 
     }

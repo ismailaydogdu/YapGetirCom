@@ -13,12 +13,12 @@ namespace YapGetirCom.Model
             Recipes = new HashSet<Recipe>();
         }
         public int MaterialID { get; set; }
-        public string MaterialName { get; set; }
+        public int ProductID { get; set; }
         public string MaterialMeasurement { get; set; }
         public decimal MaterialAmount { get; set; }
-        public int RecipeID { get; set; }
         public decimal MaterialPrice { get; set; }
 
         public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

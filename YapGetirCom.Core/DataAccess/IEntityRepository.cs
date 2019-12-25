@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 namespace YapGetirCom.Core.DataAccess
 {
     public interface IEntityRepository<TEntity>
-        where TEntity:IEntity
     {
         void Add(TEntity entity);
         void Update(TEntity entity);

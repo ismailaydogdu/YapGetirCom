@@ -71,21 +71,26 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abstract\IBaseRepository.cs" />
-    <Compile Include="Repositories\Abstract\ICampaign.cs" />
-    <Compile Include="Repositories\Abstract\ICategory.cs" />
-    <Compile Include="Repositories\Abstract\ICategoryType.cs" />
-    <Compile Include="Repositories\Abstract\IComment.cs" />
-    <Compile Include="Repositories\Abstract\ICook.cs" />
-    <Compile Include="Repositories\Abstract\IMaterial.cs" />
-    <Compile Include="Repositories\Abstract\IOrder.cs" />
-    <Compile Include="Repositories\Abstract\IPrice.cs" />
-    <Compile Include="Repositories\Abstract\IProduct.cs" />
-    <Compile Include="Repositories\Abstract\IRecipe.cs" />
-    <Compile Include="Repositories\Abstract\IRestaurant.cs" />
-    <Compile Include="Repositories\Abstract\IScoring.cs" />
-    <Compile Include="Repositories\Abstract\IShared.cs" />
-    <Compile Include="Repositories\Abstract\ISupplier.cs" />
-    <Compile Include="Repositories\Abstract\IUser.cs" />
+    <Compile Include="Repositories\Abstract\ICampaignRepository.cs" />
+    <Compile Include="Repositories\Abstract\ICategoryRepository.cs" />
+    <Compile Include="Repositories\Abstract\ICategoryTypeRepository.cs" />
+    <Compile Include="Repositories\Abstract\ICommentRepository.cs" />
+    <Compile Include="Repositories\Abstract\ICookRepository.cs" />
+    <Compile Include="Repositories\Abstract\IMaterialRepository.cs" />
+    <Compile Include="Repositories\Abstract\IMessageRepository.cs" />
+    <Compile Include="Repositories\Abstract\IOrderRepository.cs" />
+    <Compile Include="Repositories\Abstract\IPaymentRepository.cs" />
+    <Compile Include="Repositories\Abstract\IProductOrderDetailRepository.cs" />
+    <Compile Include="Repositories\Abstract\IProductOrderRepository.cs" />
+    <Compile Include="Repositories\Abstract\IProductRepository.cs" />
+    <Compile Include="Repositories\Abstract\IRecipeRepository.cs" />
+    <Compile Include="Repositories\Abstract\IRestaurantRepository.cs" />
+    <Compile Include="Repositories\Abstract\IScoringRepository.cs" />
+    <Compile Include="Repositories\Abstract\ISharedRepository.cs" />
+    <Compile Include="Repositories\Abstract\IStockRepository.cs" />
+    <Compile Include="Repositories\Abstract\ISupplierRepository.cs" />
+    <Compile Include="Repositories\Abstract\IUserRepository.cs" />
+    <Compile Include="Repositories\Abstract\IUserTypeRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="YapGetirComDbContext.cs" />
   </ItemGroup>
@@ -97,6 +102,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YapGetirCom.Core\YapGetirCom.Core.csproj">
+      <Project>{da6a6735-d484-4f48-9114-6813bf0d9b00}</Project>
+      <Name>YapGetirCom.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YapGetirCom.Model\YapGetirCom.Model.csproj">
       <Project>{298894C0-58CF-4EEE-8A16-E7BF78F299E0}</Project>
       <Name>YapGetirCom.Model</Name>

@@ -20,6 +20,7 @@ namespace YapGetirCom.Model
         public decimal Price { get; set; }
         public decimal Stock { get; set; }
         public string Unit { get; set; }
+        public string Image { get; set; }
         public Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<Material> Materials { get; set; }

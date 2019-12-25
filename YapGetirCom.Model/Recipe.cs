@@ -20,7 +20,7 @@ namespace YapGetirCom.Model
         public string Description { get; set; }
         public bool IsFavourite { get; set; }
         public int UserID { get; set; }
-
+        public string Image { get; set; }
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
 

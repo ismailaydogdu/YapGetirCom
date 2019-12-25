@@ -21,7 +21,7 @@ namespace YapGetirCom.Model
         public int CategoryID { get; set; }
         public bool IsFavourite { get; set; }
         public int UserID { get; set; }
-
+        public string Image { get; set; }
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Cook> Cooks { get; set; }
@@ -29,6 +29,7 @@ namespace YapGetirCom.Model
         public virtual ICollection<Campaign> Campaigns { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
 
 
 

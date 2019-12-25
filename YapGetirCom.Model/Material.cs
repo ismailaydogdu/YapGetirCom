@@ -17,7 +17,7 @@ namespace YapGetirCom.Model
         public string MaterialMeasurement { get; set; }
         public decimal MaterialAmount { get; set; }
         public decimal MaterialPrice { get; set; }
-
+        public string Image { get; set; }
         public virtual ICollection<Recipe> Recipes { get; set; }
         public virtual Product Product { get; set; }
     }

@@ -14,6 +14,7 @@ namespace YapGetirCom.Model
             Restaurants = new HashSet<Restaurant>();
             Suppliers = new HashSet<Supplier>();
             Campaigns = new HashSet<Campaign>();
+            Messages = new HashSet<Message>();
         }
         public int UserID { get; set; }
         public string FirstName { get; set; }
@@ -28,5 +29,7 @@ namespace YapGetirCom.Model
         public virtual ICollection<Restaurant> Restaurants { get; set; }
         public virtual ICollection<Supplier> Suppliers { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
+        
     }
 }

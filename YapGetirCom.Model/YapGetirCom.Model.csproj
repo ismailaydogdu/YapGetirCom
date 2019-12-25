@@ -48,6 +48,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Cook.cs" />
     <Compile Include="Material.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Product.cs" />

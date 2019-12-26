@@ -58,13 +58,16 @@
     <Compile Include="Mapping\CommentMapping.cs" />
     <Compile Include="Mapping\CookMapping.cs" />
     <Compile Include="Mapping\MaterialMapping.cs" />
+    <Compile Include="Mapping\MessageMapping.cs" />
     <Compile Include="Mapping\OrderMapping.cs" />
     <Compile Include="Mapping\PaymentMapping.cs" />
     <Compile Include="Mapping\ProductMapping.cs" />
+    <Compile Include="Mapping\ProductOrderMapping.cs" />
     <Compile Include="Mapping\RecipeMapping.cs" />
     <Compile Include="Mapping\RestaurantMapping.cs" />
     <Compile Include="Mapping\ScoringMapping.cs" />
     <Compile Include="Mapping\SharedMapping.cs" />
+    <Compile Include="Mapping\StockMapping.cs" />
     <Compile Include="Mapping\SupplierMapping.cs" />
     <Compile Include="Mapping\UserMapping.cs" />
     <Compile Include="Mapping\UserTypeMapping.cs" />

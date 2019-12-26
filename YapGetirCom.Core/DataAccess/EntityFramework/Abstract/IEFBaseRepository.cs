@@ -1,5 +1,4 @@
-﻿using OZamanDans.Core.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -16,6 +15,4 @@ namespace YapGetirCom.Core.DataAccess.EntityFramework.Abstract
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
     }
-
-
 }

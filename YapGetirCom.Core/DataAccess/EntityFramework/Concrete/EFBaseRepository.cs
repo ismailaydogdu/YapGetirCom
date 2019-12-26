@@ -1,4 +1,5 @@
-﻿using YapGetirCom.Core.DataAccess.EntityFramework.Abstract;
+﻿using System;
+using YapGetirCom.Core.DataAccess.EntityFramework.Abstract;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -35,9 +36,21 @@ namespace YapGetirCom.Core.DataAccess.EntityFramework
             return _db.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
-            return _db.Set<TEntity>().ToList();
+            return _db.Set<TEntity>().Where(filter).SingleOrDefault();
+        }
+
+        public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
+        {
+            if (filter == null)
+            {
+                return _db.Set<TEntity>().ToList();
+            }
+            else
+            {
+                return _db.Set<TEntity>().Where(filter).ToList();
+            }
         }
     }
 }

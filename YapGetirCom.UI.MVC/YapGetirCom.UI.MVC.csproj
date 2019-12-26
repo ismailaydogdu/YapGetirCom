@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,7 +113,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YapGetirCom.BLL\YapGetirCom.BLL.csproj">
+      <Project>{DFA92A92-196E-4154-BB96-0E7E87D065C8}</Project>
+      <Name>YapGetirCom.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetirCom.Model\YapGetirCom.Model.csproj">
+      <Project>{298894C0-58CF-4EEE-8A16-E7BF78F299E0}</Project>
+      <Name>YapGetirCom.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

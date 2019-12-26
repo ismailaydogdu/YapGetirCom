@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class UserService : IUserService
+    public class UserService : IUserService
     {
         private IUserRepository _userRepository;
         public UserService(IUserRepository userRepository)

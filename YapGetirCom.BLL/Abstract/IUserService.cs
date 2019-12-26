@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IUserService : IBaseService<User>
+    public interface IUserService : IBaseService<User>
     {
     }
 }

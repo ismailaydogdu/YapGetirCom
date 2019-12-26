@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.Core.DataAccess;
 using YapGetirCom.Model;
+using YapGetirCom.Core.DataAccess.EntityFramework.Abstract;
 
 namespace YapGetirCom.DAL.Repositories.Abstract
 {
-    interface IMessageRepository : IEntityRepository<Message>
+    public interface IMessageRepository : IEFBaseRepository<Message>
     {
     }
 }

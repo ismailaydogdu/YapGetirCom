@@ -10,9 +10,9 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class YapGetirComDbContext:DbContext
+    public class YapGetirComDbContext : DbContext
     {
-        public YapGetirComDbContext():base("Server=.; Database=YapGetirComDb; uid=sa; pwd=123")
+        public YapGetirComDbContext() : base("Server=.; Database=YapGetirComDb; uid=sa; pwd=123")
         {
 
         }
@@ -53,7 +53,7 @@ namespace YapGetirCom.DAL
         public DbSet<CategoryType> CategoryTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
-        public DbSet<Stock> Stocks  { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
 

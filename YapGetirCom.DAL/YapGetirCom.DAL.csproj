@@ -70,7 +70,6 @@
     <Compile Include="Mapping\UserTypeMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Abstract\IBaseRepository.cs" />
     <Compile Include="Repositories\Abstract\ICampaignRepository.cs" />
     <Compile Include="Repositories\Abstract\ICategoryRepository.cs" />
     <Compile Include="Repositories\Abstract\ICategoryTypeRepository.cs" />
@@ -91,12 +90,30 @@
     <Compile Include="Repositories\Abstract\ISupplierRepository.cs" />
     <Compile Include="Repositories\Abstract\IUserRepository.cs" />
     <Compile Include="Repositories\Abstract\IUserTypeRepository.cs" />
+    <Compile Include="Repositories\Concrete\CampaignRepository.cs" />
+    <Compile Include="Repositories\Concrete\CategoryRepository.cs" />
+    <Compile Include="Repositories\Concrete\CategoryTypeRepository.cs" />
+    <Compile Include="Repositories\Concrete\CommentRepository.cs" />
+    <Compile Include="Repositories\Concrete\CookRepository.cs" />
+    <Compile Include="Repositories\Concrete\MaterialRepository.cs" />
+    <Compile Include="Repositories\Concrete\MessageRepository.cs" />
+    <Compile Include="Repositories\Concrete\OrderRepository.cs" />
+    <Compile Include="Repositories\Concrete\PaymentRepository.cs" />
+    <Compile Include="Repositories\Concrete\ProductOrderDetailRepository.cs" />
+    <Compile Include="Repositories\Concrete\ProductOrderRepository.cs" />
+    <Compile Include="Repositories\Concrete\ProductRepository.cs" />
+    <Compile Include="Repositories\Concrete\RecipeRepository.cs" />
+    <Compile Include="Repositories\Concrete\RestaurantRepository.cs" />
+    <Compile Include="Repositories\Concrete\ScoringRepository.cs" />
+    <Compile Include="Repositories\Concrete\SharedRepository.cs" />
+    <Compile Include="Repositories\Concrete\StockRepository.cs" />
+    <Compile Include="Repositories\Concrete\SupplierRepository.cs" />
+    <Compile Include="Repositories\Concrete\UserRepository.cs" />
+    <Compile Include="Repositories\Concrete\UserTypeRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="YapGetirComDbContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Concrete\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

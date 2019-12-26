@@ -6,14 +6,16 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YapGetirCom.Core.DataAccess
+namespace YapGetirCom.Core.DataAccess.EntityFramework.Abstract
 {
-    public interface IEntityRepository<TEntity>
+    public interface IEFBaseRepository<TEntity>
     {
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-        TEntity Get(Expression<Func<TEntity, bool>> filter);
-        ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null);
+        TEntity GetById(int id);
+        IEnumerable<TEntity> GetAll();
     }
+
+
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OZamanDans.Core.Entity
+namespace YapGetirCom.Core.Entity
 {
     public interface IEntity
     {

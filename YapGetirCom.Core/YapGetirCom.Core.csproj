@@ -51,8 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\EntityFramework\EFRepositoryBase.cs" />
-    <Compile Include="DataAccess\IEntityRepository.cs" />
+    <Compile Include="DataAccess\EntityFramework\Concrete\EFBaseRepository.cs" />
+    <Compile Include="DataAccess\EntityFramework\Abstract\IEFBaseRepository.cs" />
     <Compile Include="Entity\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

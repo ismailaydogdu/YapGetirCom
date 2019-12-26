@@ -35,6 +35,9 @@ namespace YapGetirCom.DAL.Mapping
             Property(x => x.BirthDate)
                 .HasColumnType("date");
 
+            HasMany(x => x.Campaigns)
+                .WithMany(x => x.Users);
+
         }
     }
 }

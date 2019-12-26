@@ -10,10 +10,10 @@ namespace YapGetirCom.Model
     {
         public int SharedID { get; set; }
         public string SharedType { get; set; }
-        public int RestaurantID { get; set; }
-        public int CookID { get; set; }
-        public int RecipeID { get; set; }
-        public int UserID { get; set; }
+        public int? RestaurantID { get; set; }
+        public int? CookID { get; set; }
+        public int? RecipeID { get; set; }
+        public int? UserID { get; set; }
 
         public virtual User User { get; set; }
         public virtual Restaurant Restaurant { get; set; }

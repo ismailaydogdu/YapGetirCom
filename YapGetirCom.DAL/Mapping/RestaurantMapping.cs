@@ -15,6 +15,10 @@ namespace YapGetirCom.DAL.Mapping
             Property(x => x.CompanyName)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            Property(x => x.Image)
+                .HasMaxLength(500)
+                .IsRequired();
         }
     }
 }

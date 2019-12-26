@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YapGetirCom.Model
 {
-    public class Stock
+    public class Stock:BaseModel
     {
         public int StockID { get; set; }
         public int SupplierID { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YapGetirCom.Model
 {
-    public class ProductOrder
+    public class ProductOrder:BaseModel
     {
         public ProductOrder()
         {

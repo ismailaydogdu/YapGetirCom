@@ -23,11 +23,10 @@ namespace YapGetirCom.DAL.Mapping
 
             HasMany(x => x.Restaurants)
                 .WithMany(x => x.Campaigns);
-                
 
-            HasRequired(x => x.User)
-                 .WithMany(x => x.Campaigns)
-                 .HasForeignKey(x => x.UserID);
+
+            HasMany(x => x.Users)
+                .WithMany(x => x.Campaigns);
 
             HasMany(x => x.Recipes)
                 .WithMany(x => x.Campaigns);

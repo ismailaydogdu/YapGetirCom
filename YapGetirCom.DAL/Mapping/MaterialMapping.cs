@@ -20,7 +20,9 @@ namespace YapGetirCom.DAL.Mapping
                 .HasColumnType("money");
 
 
-
+            Property(x => x.Image)
+                .HasMaxLength(500)
+                .IsRequired();
         }
     }
 }

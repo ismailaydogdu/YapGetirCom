@@ -16,8 +16,16 @@ namespace YapGetirCom.DAL.Mapping
                 .HasMaxLength(25)
                 .IsRequired();
 
+            Property(x => x.Unit)
+                .HasMaxLength(25)
+                .IsRequired();
+
             Property(x => x.Price)
                 .HasColumnType("money");
+
+            Property(x => x.Image)
+                .HasMaxLength(500)
+                .IsRequired();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YapGetirCom.Model
 {
-    public class UserType
+    public class UserType:BaseModel
     {
         public UserType()
         {

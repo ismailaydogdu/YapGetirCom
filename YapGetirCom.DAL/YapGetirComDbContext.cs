@@ -14,7 +14,7 @@ namespace YapGetirCom.DAL
     {
         public YapGetirComDbContext() : base("Server=.; Database=YapGetirComDb; uid=sa; pwd=123")
         {
-
+            Database.SetInitializer<YapGetirComDbContext>(new MyStrategy());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace YapGetirCom.DAL
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Payment> Prices { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<Cook> Cooks { get; set; }
@@ -56,5 +56,6 @@ namespace YapGetirCom.DAL
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
     }
 }

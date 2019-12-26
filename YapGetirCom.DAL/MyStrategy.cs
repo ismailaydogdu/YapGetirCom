@@ -6,11 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.Model;
 
-
 namespace YapGetirCom.DAL
 {
-    class MyStrategy: DropCreateDatabaseIfModelChanges<YapGetirDbContext>
+    class MyStrategy:DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
     {
-       
     }
 }

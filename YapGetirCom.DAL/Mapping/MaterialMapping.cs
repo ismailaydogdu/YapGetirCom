@@ -18,6 +18,9 @@ namespace YapGetirCom.DAL.Mapping
                 .HasMaxLength(50);
             Property(x => x.MaterialPrice)
                 .HasColumnType("money");
+
+
+
         }
     }
 }

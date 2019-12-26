@@ -64,11 +64,5 @@
     <Compile Include="User.cs" />
     <Compile Include="UserType.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YapGetirCom.Core\YapGetirCom.Core.csproj">
-      <Project>{DA6A6735-D484-4F48-9114-6813BF0D9B00}</Project>
-      <Name>YapGetirCom.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,9 @@ namespace YapGetirCom.Model
             Comments = new HashSet<Comment>();
             Materials = new HashSet<Material>();
             Campaigns = new HashSet<Campaign>();
+            Orders = new HashSet<Order>();
+            Scorings = new HashSet<Scoring>();
+            Shareds = new HashSet<Shared>();
         }
         public int RecipeID { get; set; }
         public string RecipeName { get; set; }
@@ -27,6 +30,8 @@ namespace YapGetirCom.Model
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Material> Materials { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }
-
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Scoring> Scorings { get; set; }
+        public virtual ICollection<Shared> Shareds { get; set; }
     }
 }

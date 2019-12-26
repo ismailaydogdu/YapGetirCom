@@ -15,6 +15,9 @@ namespace YapGetirCom.Model
             Campaigns = new HashSet<Campaign>();
             Stocks = new HashSet<Stock>();
             ProductOrders = new HashSet<ProductOrder>();
+            Orders = new HashSet<Order>();
+            Scorings = new HashSet<Scoring>();
+            Shareds = new HashSet<Shared>();
         }
         public int RestaurantID { get; set; }
         public string CompanyName { get; set; }
@@ -30,8 +33,8 @@ namespace YapGetirCom.Model
         public virtual ICollection<Stock> Stocks { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
-
-
-
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Scoring> Scorings { get; set; }
+        public virtual ICollection<Shared> Shareds { get; set; }
     }
 }

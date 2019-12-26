@@ -12,6 +12,7 @@ namespace YapGetirCom.Model
         {
             Stocks = new HashSet<Stock>();
             ProductOrders = new HashSet<ProductOrder>();
+            Products = new HashSet<Product>();
         }
         public int SupplierID { get; set; }
         public string CompanyName { get; set; }
@@ -23,5 +24,7 @@ namespace YapGetirCom.Model
         public virtual User User { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
+        public virtual ICollection<Product> Products  { get; set; }
+
     }
 }

@@ -15,6 +15,11 @@ namespace YapGetirCom.DAL.Mapping
             Property(x => x.CategoryName)
                 .HasMaxLength(30)
                 .IsRequired();
+
+
+            HasRequired(x => x.CategoryType)
+                .WithMany(x => x.Categories)
+                .HasForeignKey(x => x.CategoryTypeID);
         }
     }
 }

@@ -15,6 +15,9 @@ namespace YapGetirCom.Model
             Suppliers = new HashSet<Supplier>();
             Campaigns = new HashSet<Campaign>();
             Messages = new HashSet<Message>();
+            Orders = new HashSet<Order>();
+            Recipes = new HashSet<Recipe>();
+            Shareds = new HashSet<Shared>();
         }
         public int UserID { get; set; }
         public string FirstName { get; set; }
@@ -30,6 +33,9 @@ namespace YapGetirCom.Model
         public virtual ICollection<Supplier> Suppliers { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
-        
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<Shared> Shareds { get; set; }
+
     }
 }

@@ -19,6 +19,10 @@ namespace YapGetirCom.DAL.Mapping
             Property(x => x.LastName)
                 .IsRequired()
                 .HasMaxLength(30);
+
+            HasRequired(x => x.Restaurant)
+              .WithMany(x => x.Cooks)
+              .HasForeignKey(x => x.RestaurantID);
         }
     }
 }

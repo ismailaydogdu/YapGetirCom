@@ -15,6 +15,24 @@ namespace YapGetirCom.DAL.Mapping
             Property(x => x.SharedType)
                 .HasMaxLength(30)
                 .IsRequired();
+
+
+            HasRequired(x => x.Restaurant)
+               .WithMany(x => x.Shareds)
+               .HasForeignKey(x => x.RestaurantID);
+
+            HasRequired(x => x.Cook)
+              .WithMany(x => x.Shareds)
+              .HasForeignKey(x => x.CookID);
+
+            HasRequired(x => x.Recipe)
+              .WithMany(x => x.Shareds)
+              .HasForeignKey(x => x.RecipeID);
+
+            HasRequired(x => x.User)
+                 .WithMany(x => x.Shareds)
+                 .HasForeignKey(x => x.UserID);
         }
+              
     }
 }

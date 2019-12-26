@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Message:BaseModel
+    public class Message:BaseModel, IEntity
     {
         public int MessageID { get; set; }
         public int UserID { get; set; }

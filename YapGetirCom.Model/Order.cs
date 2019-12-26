@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-   public class Order : BaseModel
+   public class Order : BaseModel, IEntity
     {
         public int OrderID { get; set; }
         public int RecipeID { get; set; }
@@ -19,6 +20,7 @@ namespace YapGetirCom.Model
         public int CookID { get; set; }
         public int UserID { get; set; }
         public decimal OrderPrice { get; set; }
+
         public virtual Recipe Recipe { get; set; }
         public virtual Payment Payment { get; set; }
         public virtual Restaurant Restaurant { get; set; }

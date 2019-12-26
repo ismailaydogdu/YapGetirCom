@@ -56,7 +56,5 @@ namespace YapGetirCom.DAL
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
-
-
     }
 }

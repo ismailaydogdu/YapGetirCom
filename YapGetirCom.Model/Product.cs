@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Product : BaseModel
+    public class Product : BaseModel, IEntity
     {
         public Product()
         {
@@ -21,6 +22,7 @@ namespace YapGetirCom.Model
         public decimal Stock { get; set; }
         public string Unit { get; set; }
         public string Image { get; set; }
+
         public Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<Material> Materials { get; set; }

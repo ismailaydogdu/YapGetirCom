@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Supplier : BaseModel
+    public class Supplier : BaseModel, IEntity
     {
         public Supplier()
         {
@@ -21,10 +22,11 @@ namespace YapGetirCom.Model
         public string Phone { get; set; }
         public string Country { get; set; }
         public int UserID { get; set; }
+
         public virtual User User { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
-        public virtual ICollection<Product> Products  { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
     }
 }

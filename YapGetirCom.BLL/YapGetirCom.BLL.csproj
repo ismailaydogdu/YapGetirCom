@@ -41,7 +41,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\ICampaignService.cs" />
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\ICategoryTypeService.cs" />
+    <Compile Include="Abstract\ICommentService.cs" />
+    <Compile Include="Abstract\ICookService.cs" />
+    <Compile Include="Abstract\IMaterialService.cs" />
+    <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\IOrderService.cs" />
+    <Compile Include="Abstract\IPaymentService.cs" />
+    <Compile Include="Abstract\IProductOrderDetailService.cs" />
+    <Compile Include="Abstract\IProductOrderService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IRecipeService.cs" />
+    <Compile Include="Abstract\IRestaurantService.cs" />
+    <Compile Include="Abstract\IScoringService.cs" />
+    <Compile Include="Abstract\ISharedService.cs" />
+    <Compile Include="Abstract\IStockService.cs" />
+    <Compile Include="Abstract\ISupplierService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Abstract\IUserTypeService.cs" />
+    <Compile Include="Concrete\CampaignService.cs" />
+    <Compile Include="Concrete\CategoryService.cs" />
+    <Compile Include="Concrete\CategoryTypeService.cs" />
+    <Compile Include="Concrete\CommentService.cs" />
+    <Compile Include="Concrete\CookService.cs" />
+    <Compile Include="Concrete\MaterialService.cs" />
+    <Compile Include="Concrete\MessageService.cs" />
+    <Compile Include="Concrete\OrderService.cs" />
+    <Compile Include="Concrete\PaymentService.cs" />
+    <Compile Include="Concrete\ProductOrderDetailService.cs" />
+    <Compile Include="Concrete\ProductOrderService.cs" />
+    <Compile Include="Concrete\ProductService.cs" />
+    <Compile Include="Concrete\RecipeService.cs" />
+    <Compile Include="Concrete\RestaurantService.cs" />
+    <Compile Include="Concrete\ScoringService.cs" />
+    <Compile Include="Concrete\SharedService.cs" />
+    <Compile Include="Concrete\StockService.cs" />
+    <Compile Include="Concrete\SupplierService.cs" />
+    <Compile Include="Concrete\UserService.cs" />
+    <Compile Include="Concrete\UserTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\YapGetirCom.Core\YapGetirCom.Core.csproj">
+      <Project>{DA6A6735-D484-4F48-9114-6813BF0D9B00}</Project>
+      <Name>YapGetirCom.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetirCom.DAL\YapGetirCom.DAL.csproj">
+      <Project>{27D6A722-ADE5-4344-A74E-220DC479ED2C}</Project>
+      <Name>YapGetirCom.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetirCom.Model\YapGetirCom.Model.csproj">
+      <Project>{298894C0-58CF-4EEE-8A16-E7BF78F299E0}</Project>
+      <Name>YapGetirCom.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

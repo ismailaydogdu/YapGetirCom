@@ -7,12 +7,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 
 namespace YapGetirCom.Core.DataAccess.EntityFramework
 {
     public class EFRepositoryBase<TEntity> : IEFBaseRepository<TEntity>
-        where TEntity : class, new()
+        where TEntity : class, IEntity, new()
     {
         protected DbContext _db;
         public EFRepositoryBase(DbContext db)
@@ -35,12 +36,10 @@ namespace YapGetirCom.Core.DataAccess.EntityFramework
         {
             return _db.Set<TEntity>().Find(id);
         }
-
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             return _db.Set<TEntity>().Where(filter).SingleOrDefault();
         }
-
         public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
             if (filter == null)

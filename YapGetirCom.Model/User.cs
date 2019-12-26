@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class User : BaseModel
+    public class User : BaseModel, IEntity
     {
         public User()
         {
@@ -26,7 +27,8 @@ namespace YapGetirCom.Model
         public string Password { get; set; }
         public string Region { get; set; }
         public DateTime BirthDate { get; set; }
-        public int UserTypeID { get; set; }                       
+        public int UserTypeID { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual UserType UserType { get; set; }
         public virtual ICollection<Restaurant> Restaurants { get; set; }
@@ -36,6 +38,5 @@ namespace YapGetirCom.Model
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<Recipe> Recipes { get; set; }
         public virtual ICollection<Shared> Shareds { get; set; }
-
     }
 }

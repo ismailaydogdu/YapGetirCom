@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Cook : BaseModel
+    public class Cook : BaseModel, IEntity
+
     {
         public Cook()
         {
@@ -19,8 +21,8 @@ namespace YapGetirCom.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int RestaurantID { get; set; }
-        public virtual Restaurant Restaurant { get; set; }
 
+        public virtual Restaurant Restaurant { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<Scoring> Scorings { get; set; }

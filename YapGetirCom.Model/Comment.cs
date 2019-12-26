@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Comment : BaseModel
+    public class Comment : BaseModel, IEntity
     {
         public int CommentID { get; set; }
         public string CommentContent { get; set; }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Recipe : BaseModel
+    public class Recipe : BaseModel, IEntity
     {
         public Recipe()
         {
@@ -24,9 +25,9 @@ namespace YapGetirCom.Model
         public bool IsFavourite { get; set; }
         public int UserID { get; set; }
         public string Image { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
-
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Material> Materials { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }

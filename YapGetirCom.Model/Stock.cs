@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
 
 namespace YapGetirCom.Model
 {
-    public class Stock:BaseModel
+    public class Stock : BaseModel, IEntity
     {
         public int StockID { get; set; }
         public int SupplierID { get; set; }

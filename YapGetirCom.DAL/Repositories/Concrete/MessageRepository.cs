@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class MessageRepository : EFRepositoryBase<Message>, IMessageRepository
+    public class MessageRepository : EFRepositoryBase<Message>, IMessageRepository
     {
         public MessageRepository(YapGetirComDbContext db) : base(db)
         {

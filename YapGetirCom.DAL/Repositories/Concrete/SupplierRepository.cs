@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class SupplierRepository : EFRepositoryBase<Supplier>, ISupplierRepository
+    public class SupplierRepository : EFRepositoryBase<Supplier>, ISupplierRepository
     {
         public SupplierRepository(YapGetirComDbContext db) : base(db)
         {

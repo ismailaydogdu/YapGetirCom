@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class CategoryTypeService : ICategoryTypeService
+    public class CategoryTypeService : ICategoryTypeService
     {
+        public ICategoryTypeRepository _categoryTypeRepository;
+        public CategoryTypeService(ICategoryTypeRepository categoryTypeRepository)
+        {
+            _categoryTypeRepository = categoryTypeRepository;
+        }
         public void Insert(CategoryType entity)
         {
             throw new NotImplementedException();

@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface ICategoryTypeService : IBaseService<CategoryType>
+    public interface ICategoryTypeService : IBaseService<CategoryType>
     {
     }
 }

@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class MaterialService : IMaterialService
+    public class MaterialService : IMaterialService
     {
+        public IMaterialRepository _materialRepository;  
+        public MaterialService(IMaterialRepository materialRepository)
+        {
+            _materialRepository = materialRepository;
+        }
         public void Insert(Material entity)
         {
             throw new NotImplementedException();

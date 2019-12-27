@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class StockService : IStockService
+    public class StockService : IStockService
     {
+        public IStockRepository _stockRepository;
+        public StockService(IStockRepository stockRepository)
+        {
+            _stockRepository = stockRepository;
+        }
         public void Insert(Stock entity)
         {
             throw new NotImplementedException();

@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class RestaurantService : IRestaurantService
+    public class RestaurantService : IRestaurantService
     {
+        public IRestaurantRepository _restaurantRepository;
+        public RestaurantService(IRestaurantRepository restaurantRepository)
+        {
+            _restaurantRepository = restaurantRepository;
+        }
         public void Insert(Restaurant entity)
         {
             throw new NotImplementedException();

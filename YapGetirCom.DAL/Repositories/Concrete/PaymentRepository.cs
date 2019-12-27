@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class PaymentRepository : EFRepositoryBase<Payment>, IPaymentRepository
+    public class PaymentRepository : EFRepositoryBase<Payment>, IPaymentRepository
     {
         public PaymentRepository(YapGetirComDbContext db) : base(db)
         {

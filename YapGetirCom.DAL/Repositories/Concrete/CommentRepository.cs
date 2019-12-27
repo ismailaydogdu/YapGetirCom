@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class CommentRepository : EFRepositoryBase<Comment>, ICommentRepository
+    public class CommentRepository : EFRepositoryBase<Comment>, ICommentRepository
     {
         public CommentRepository(YapGetirComDbContext db) : base(db)
         {

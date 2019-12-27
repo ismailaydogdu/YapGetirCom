@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface ISharedService : IBaseService<Shared>
+    public interface ISharedService : IBaseService<Shared>
     {
     }
 }

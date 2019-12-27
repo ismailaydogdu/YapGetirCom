@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IRecipeService : IBaseService<Recipe>
+    public interface IRecipeService : IBaseService<Recipe>
     {
     }
 }

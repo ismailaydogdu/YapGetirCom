@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IPaymentService : IBaseService<Payment>
+    public interface IPaymentService : IBaseService<Payment>
     {
     }
 }

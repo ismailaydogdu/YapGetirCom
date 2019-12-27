@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class ScoringService : IScoringService
+    public class ScoringService : IScoringService
     {
+        public IScoringRepository _scoringRepository;
+        public ScoringService(IScoringRepository scoringRepository)
+        {
+            _scoringRepository = scoringRepository;
+        }
         public void Insert(Scoring entity)
         {
             throw new NotImplementedException();

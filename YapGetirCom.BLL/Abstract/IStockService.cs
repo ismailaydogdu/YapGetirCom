@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IStockService : IBaseService<Stock>
+    public interface IStockService : IBaseService<Stock>
     {
     }
 }

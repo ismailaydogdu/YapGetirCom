@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class CommentService : ICommentService
+    public class CommentService : ICommentService
     {
+        public ICommentRepository _commentRepository;
+        public CommentService(ICommentRepository commentRepository)
+        {
+            _commentRepository = commentRepository;
+        }
         public void Insert(Comment entity)
         {
             throw new NotImplementedException();

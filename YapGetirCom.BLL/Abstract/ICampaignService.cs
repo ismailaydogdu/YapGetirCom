@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface ICampaignService : IBaseService<Campaign>
+    public interface ICampaignService : IBaseService<Campaign>
     {
 
     }

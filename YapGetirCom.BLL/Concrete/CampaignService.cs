@@ -9,9 +9,9 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class CampaignService : ICampaignService
+    public class CampaignService : ICampaignService
     {
-        private ICampaignRepository _campaignRepository;
+        public ICampaignRepository _campaignRepository;
 
         public CampaignService(ICampaignRepository campaignRepository)
         {

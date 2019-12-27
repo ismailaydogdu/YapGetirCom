@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class ProductService : IProductService
+    public class ProductService : IProductService
     {
+        public IProductRepository _productRepository;
+        public ProductService(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
         public void Insert(Product entity)
         {
             throw new NotImplementedException();

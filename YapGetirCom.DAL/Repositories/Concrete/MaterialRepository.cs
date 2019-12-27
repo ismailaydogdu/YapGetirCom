@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class MaterialRepository : EFRepositoryBase<Material>, IMaterialRepository
+    public class MaterialRepository : EFRepositoryBase<Material>, IMaterialRepository
     {
         public MaterialRepository(YapGetirComDbContext db) : base(db)
         {

@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class RecipeRepository : EFRepositoryBase<Recipe>, IRecipeRepository
+    public class RecipeRepository : EFRepositoryBase<Recipe>, IRecipeRepository
     {
         public RecipeRepository(YapGetirComDbContext db) : base(db)
         {

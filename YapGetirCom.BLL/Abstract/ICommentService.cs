@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface ICommentService : IBaseService<Comment>
+    public interface ICommentService : IBaseService<Comment>
     {
     }
 }

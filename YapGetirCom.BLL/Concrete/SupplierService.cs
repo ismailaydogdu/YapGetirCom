@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class SupplierService : ISupplierService
+    public class SupplierService : ISupplierService
     {
+        public ISupplierRepository _supplierRepository;
+        public SupplierService(ISupplierRepository supplierRepository)
+        {
+            _supplierRepository = supplierRepository;
+        }
         public void Insert(Supplier entity)
         {
             throw new NotImplementedException();

@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class UserTypeService : IUserTypeService
+    public class UserTypeService : IUserTypeService
     {
+        public IUserTypeRepository _userTypeRepository;
+        public UserTypeService(IUserTypeRepository userTypeRepository)
+        {
+            _userTypeRepository = userTypeRepository;
+        }
         public void Insert(UserType entity)
         {
             throw new NotImplementedException();

@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class CampaignRepository : EFRepositoryBase<Campaign>, ICampaignRepository
+    public class CampaignRepository : EFRepositoryBase<Campaign>, ICampaignRepository
     {
         public CampaignRepository(YapGetirComDbContext db) : base(db)
         {

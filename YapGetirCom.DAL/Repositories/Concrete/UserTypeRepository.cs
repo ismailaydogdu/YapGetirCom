@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class UserTypeRepository : EFRepositoryBase<UserType>, IUserTypeRepository
+    public class UserTypeRepository : EFRepositoryBase<UserType>, IUserTypeRepository
     {
         public UserTypeRepository(YapGetirComDbContext db) : base(db)
         {

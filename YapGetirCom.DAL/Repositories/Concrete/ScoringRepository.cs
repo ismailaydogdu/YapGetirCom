@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class ScoringRepository : EFRepositoryBase<Scoring>, IScoringRepository
+    public class ScoringRepository : EFRepositoryBase<Scoring>, IScoringRepository
     {
         public ScoringRepository(YapGetirComDbContext db) : base(db)
         {

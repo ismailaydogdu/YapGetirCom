@@ -11,7 +11,7 @@ namespace YapGetirCom.BLL.Concrete
 {
     public class UserService : IUserService
     {
-        private IUserRepository _userRepository;
+        public IUserRepository _userRepository;
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;

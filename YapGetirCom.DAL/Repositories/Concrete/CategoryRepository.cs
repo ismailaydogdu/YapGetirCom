@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class CategoryRepository : EFRepositoryBase<Category>, ICategoryRepository
+    public class CategoryRepository : EFRepositoryBase<Category>, ICategoryRepository
     {
         public CategoryRepository(YapGetirComDbContext db) : base(db)
         {

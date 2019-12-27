@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IScoringService : IBaseService<Scoring>
+    public interface IScoringService : IBaseService<Scoring>
     {
     }
 }

@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface ISupplierService : IBaseService<Supplier>
+    public interface ISupplierService : IBaseService<Supplier>
     {
     }
 }

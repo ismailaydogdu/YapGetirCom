@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class ProductOrderRepository : EFRepositoryBase<ProductOrder>, IProductOrderRepository
+    public class ProductOrderRepository : EFRepositoryBase<ProductOrder>, IProductOrderRepository
     {
         public ProductOrderRepository(YapGetirComDbContext db) : base(db)
         {

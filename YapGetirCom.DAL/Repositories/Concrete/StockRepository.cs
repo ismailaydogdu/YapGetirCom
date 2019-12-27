@@ -9,7 +9,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL.Repositories.Concrete
 {
-    class StockRepository : EFRepositoryBase<Stock>, IStockRepository
+    public class StockRepository : EFRepositoryBase<Stock>, IStockRepository
     {
         public StockRepository(YapGetirComDbContext db) : base(db)
         {

@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class PaymentService : IPaymentService
+    public class PaymentService : IPaymentService
     {
+        public IPaymentRepository _paymentRepository;
+        public PaymentService(IPaymentRepository paymentRepository)
+        {
+            _paymentRepository = paymentRepository;
+        }
         public void Insert(Payment entity)
         {
             throw new NotImplementedException();

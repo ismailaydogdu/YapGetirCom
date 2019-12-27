@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YapGetirCom.BLL.Abstract;
+using YapGetirCom.DAL.Repositories.Abstract;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Concrete
 {
-    class CookService : ICookService
+    public class CookService : ICookService
     {
+        public ICookRepository _cookRepository;
+        public CookService(ICookRepository cookRepository)
+        {
+            _cookRepository = cookRepository;
+        }
         public void Insert(Cook entity)
         {
             throw new NotImplementedException();

@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IMaterialService : IBaseService<Material>
+    public interface IMaterialService : IBaseService<Material>
     {
     }
 }

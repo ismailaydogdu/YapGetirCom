@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    interface IProductOrderDetailService : IBaseService<ProductOrderDetail>
+    public interface IProductOrderDetailService : IBaseService<ProductOrderDetail>
     {
     }
 }

@@ -4,28 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YapGetirCom.BLL.Abstract;
-using YapGetirCom.BLL.Concrete;
 using YapGetirCom.Model;
 
 namespace YapGetirCom.UI.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class DenemeController : Controller
     {
-        private IUserService _userService;
-        public HomeController(IUserService userService)
+        private readonly IUserService _userService;
+        
+        public DenemeController(IUserService userService)
         {
             _userService = userService;
         }
-        // GET: Home
+        // GET: Deneme
         public ActionResult Index()
-        {
+        {   
             List<User> users = _userService.GetAll().ToList();
-            if (users != null)
+            if (users!=null)
             {
                 return View(users);
             }
 
             return View();
+
+
         }
     }
 }

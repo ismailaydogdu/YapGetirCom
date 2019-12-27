@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Ninject;
 using YapGetirCom.BLL.Abstract;
 using YapGetirCom.BLL.Concrete;
+using YapGetirCom.BLL.IoC.Ninject;
 using YapGetirCom.DAL;
 using YapGetirCom.DAL.Repositories.Concrete;
 
@@ -44,6 +46,12 @@ namespace YapGetirCom.UI.MVC.App_Start
             this._kernel.Bind<ISupplierService>().To<SupplierService>().WithConstructorArgument("_supplierRepository", new SupplierRepository(db));
             this._kernel.Bind<IUserService>().To<UserService>().WithConstructorArgument("_userRepository", new UserRepository(db));
             this._kernel.Bind<IUserTypeService>().To<UserTypeService>().WithConstructorArgument("_userTypeRepository", new UserTypeRepository(db));
+            //_kernel.Load<CustomDALModule>();
+        }
+
+        protected IController GetController(RequestContext requestContext, Type controllerType)
+        {
+            return controllerType == null ? null : (IController) _kernel.Get(controllerType);
         }
     }
 }

@@ -10,7 +10,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.IoC.Ninject
 {
-    class CustomDALModule : NinjectModule
+    public class CustomDALModule : NinjectModule
     {
         public override void Load()
         {

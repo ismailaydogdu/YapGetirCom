@@ -44,6 +44,10 @@ namespace YapGetirCom.BLL.Concrete
         public ICollection<Category> GetAll()
         {
             throw new NotImplementedException();
+
+
+
+
         }
     }
 }

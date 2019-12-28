@@ -144,6 +144,7 @@ namespace YapGetirCom.DAL
 
             };
 
+
             Supplier supplier = new Supplier()
             {
                 CompanyName = "Dincel Gıda",
@@ -169,7 +170,7 @@ namespace YapGetirCom.DAL
             context.SaveChanges();
             context.Suppliers.Add(supplier);
             context.SaveChanges();
-            base.Seed(context);
+            
 
         }
     }

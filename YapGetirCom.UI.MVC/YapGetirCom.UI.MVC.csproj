@@ -290,6 +290,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Recipes\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -300,6 +301,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\AddRecipe\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YapGetirCom.BLL\YapGetirCom.BLL.csproj">
@@ -313,6 +315,10 @@
     <ProjectReference Include="..\YapGetirCom.DAL\YapGetirCom.DAL.csproj">
       <Project>{27D6A722-ADE5-4344-A74E-220DC479ED2C}</Project>
       <Name>YapGetirCom.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetirCom.DTO\YapGetirCom.DTO.csproj">
+      <Project>{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}</Project>
+      <Name>YapGetirCom.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\YapGetirCom.Model\YapGetirCom.Model.csproj">
       <Project>{298894C0-58CF-4EEE-8A16-E7BF78F299E0}</Project>

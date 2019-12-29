@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class MyStrategy : DropCreateDatabaseAlways<YapGetirComDbContext>
+    class MyStrategy : DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
     {
         protected override void Seed(YapGetirComDbContext context)
         {
@@ -20,10 +20,10 @@ namespace YapGetirCom.DAL
                 };
             List<UserType> userTypes = new List<UserType>()
                 {
-                    new UserType(){TypeName="Customer",IsActive=true,CreateDate=DateTime.Now},
-                    new UserType(){TypeName="Restaurant",IsActive=true,CreateDate=DateTime.Now},
-                    new UserType(){TypeName="Supplier",IsActive=true,CreateDate=DateTime.Now},
-                    new UserType(){TypeName="Admin",IsActive=true,CreateDate=DateTime.Now,},
+                    new UserType(){TypeName="Kullanıcı",IsActive=true,CreateDate=DateTime.Now},
+                    new UserType(){TypeName="Restoran",IsActive=true,CreateDate=DateTime.Now},
+                    new UserType(){TypeName="Tedarikçi",IsActive=true,CreateDate=DateTime.Now},
+                    new UserType(){TypeName="Yönetici",IsActive=true,CreateDate=DateTime.Now,},
 
                 };
             List<Payment> payments = new List<Payment>()

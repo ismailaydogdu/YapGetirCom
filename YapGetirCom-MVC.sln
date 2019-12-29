@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetirCom.UI.MVC", "YapGe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetirCom.BLL", "YapGetirCom.BLL\YapGetirCom.BLL.csproj", "{DFA92A92-196E-4154-BB96-0E7E87D065C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetirCom.DTO", "YapGetirCom.DTO\YapGetirCom.DTO.csproj", "{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DFA92A92-196E-4154-BB96-0E7E87D065C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFA92A92-196E-4154-BB96-0E7E87D065C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFA92A92-196E-4154-BB96-0E7E87D065C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9E1E2E-12C9-4066-BBC7-07DCBBC7F01F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

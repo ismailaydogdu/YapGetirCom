@@ -23,22 +23,27 @@ namespace YapGetirCom.Core.DataAccess.EntityFramework
         public void Add(TEntity entity)
         {
             _db.Entry(entity).State = EntityState.Added;
+            _db.SaveChanges();
         }
         public void Delete(TEntity entity)
         {
             _db.Entry(entity).State = EntityState.Deleted;
+            _db.SaveChanges();
         }
         public void Update(TEntity entity)
         {
             _db.Entry(entity).State = EntityState.Modified;
+            _db.SaveChanges();
         }
         public TEntity GetById(int id)
         {
             return _db.Set<TEntity>().Find(id);
+           
         }
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             return _db.Set<TEntity>().Where(filter).SingleOrDefault();
+            
         }
         public ICollection<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
@@ -50,6 +55,7 @@ namespace YapGetirCom.Core.DataAccess.EntityFramework
             {
                 return _db.Set<TEntity>().Where(filter).ToList();
             }
+
         }
     }
 }

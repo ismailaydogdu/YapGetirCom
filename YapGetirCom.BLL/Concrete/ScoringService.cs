@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(Scoring entity)
         {
-            throw new NotImplementedException();
+            _scoringRepository.Add(entity);
         }
 
         public void Delete(Scoring entity)
         {
-            throw new NotImplementedException();
+            _scoringRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _scoringRepository.Delete(Get(id));
         }
 
         public void Update(Scoring entity)
         {
-            throw new NotImplementedException();
+            _scoringRepository.Update(entity);
         }
 
         public Scoring Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _scoringRepository.Get(x => x.ScoringID == entityID);
         }
 
         public ICollection<Scoring> GetAll()
         {
-            throw new NotImplementedException();
+            return _scoringRepository.GetAll();
         }
     }
 }

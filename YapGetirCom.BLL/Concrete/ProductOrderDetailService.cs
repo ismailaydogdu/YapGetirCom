@@ -11,39 +11,39 @@ namespace YapGetirCom.BLL.Concrete
 {
     public class ProductOrderDetailService : IProductOrderDetailService
     {
-        public IProductOrderDetailRepository _ProductOrderDetailRepository;
+        public IProductOrderDetailRepository _productOrderDetailRepository;
         public ProductOrderDetailService(IProductOrderDetailRepository productOrderDetailRepository)
         {
-            _ProductOrderDetailRepository = productOrderDetailRepository;
+            _productOrderDetailRepository = productOrderDetailRepository;
         }
         public void Insert(ProductOrderDetail entity)
         {
-            throw new NotImplementedException();
+            _productOrderDetailRepository.Add(entity);
         }
 
         public void Delete(ProductOrderDetail entity)
         {
-            throw new NotImplementedException();
+            _productOrderDetailRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _productOrderDetailRepository.Delete(Get(id));
         }
 
         public void Update(ProductOrderDetail entity)
         {
-            throw new NotImplementedException();
+            _productOrderDetailRepository.Update(entity);
         }
 
         public ProductOrderDetail Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _productOrderDetailRepository.Get(x => x.ProductOrderDetailID == entityID);
         }
 
         public ICollection<ProductOrderDetail> GetAll()
         {
-            throw new NotImplementedException();
+            return _productOrderDetailRepository.GetAll();
         }
     }
 }

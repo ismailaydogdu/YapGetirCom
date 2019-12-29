@@ -11,43 +11,39 @@ namespace YapGetirCom.BLL.Concrete
 {
     public class CategoryService : ICategoryService
     {
-        public ICampaignRepository _campaignRepository;
-        public CategoryService(ICampaignRepository campaignRepository)
+        public ICategoryRepository _categoryRepository;
+        public CategoryService(ICategoryRepository categoryRepository)
         {
-            _campaignRepository = campaignRepository;
+            _categoryRepository = categoryRepository;
         }
         public void Insert(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Add(entity);
         }
 
         public void Delete(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Delete(Get(id));
         }
 
         public void Update(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Update(entity);
         }
 
         public Category Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.Get(x => x.CategoryID == entityID);
         }
 
         public ICollection<Category> GetAll()
         {
-            throw new NotImplementedException();
-
-
-
-
+            return _categoryRepository.GetAll();
         }
     }
 }

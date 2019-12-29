@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(ProductOrder entity)
         {
-            throw new NotImplementedException();
+            _productOrderRepository.Add(entity);
         }
 
         public void Delete(ProductOrder entity)
         {
-            throw new NotImplementedException();
+            _productOrderRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _productOrderRepository.Delete(Get(id));
         }
 
         public void Update(ProductOrder entity)
         {
-            throw new NotImplementedException();
+            _productOrderRepository.Update(entity);
         }
 
         public ProductOrder Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _productOrderRepository.Get(x => x.ProductOrderID == entityID);
         }
 
         public ICollection<ProductOrder> GetAll()
         {
-            throw new NotImplementedException();
+            return _productOrderRepository.GetAll();
         }
     }
 }

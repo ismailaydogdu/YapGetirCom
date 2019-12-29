@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(Shared entity)
         {
-            throw new NotImplementedException();
+            _sharedRepository.Add(entity);
         }
 
         public void Delete(Shared entity)
         {
-            throw new NotImplementedException();
+            _sharedRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _sharedRepository.Delete(Get(id));
         }
 
         public void Update(Shared entity)
         {
-            throw new NotImplementedException();
+            _sharedRepository.Update(entity);
         }
 
         public Shared Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _sharedRepository.Get(x => x.SharedID == entityID);
         }
 
         public ICollection<Shared> GetAll()
         {
-            throw new NotImplementedException();
+            return _sharedRepository.GetAll();
         }
     }
 }

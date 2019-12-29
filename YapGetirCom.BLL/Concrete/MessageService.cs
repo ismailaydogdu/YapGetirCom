@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(Message entity)
         {
-            throw new NotImplementedException();
+            _messageRepository.Add(entity);
         }
 
         public void Delete(Message entity)
         {
-            throw new NotImplementedException();
+            _messageRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _messageRepository.Delete(Get(id));
         }
 
         public void Update(Message entity)
         {
-            throw new NotImplementedException();
+            _messageRepository.Update(entity);
         }
 
         public Message Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _messageRepository.Get(x => x.MessageID == entityID);
         }
 
         public ICollection<Message> GetAll()
         {
-            throw new NotImplementedException();
+            return _messageRepository.GetAll();
         }
     }
 }

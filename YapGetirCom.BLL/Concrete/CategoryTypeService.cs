@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(CategoryType entity)
         {
-            throw new NotImplementedException();
+            _categoryTypeRepository.Add(entity);
         }
 
         public void Delete(CategoryType entity)
         {
-            throw new NotImplementedException();
+            _categoryTypeRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _categoryTypeRepository.Delete(Get(id));
         }
 
         public void Update(CategoryType entity)
         {
-            throw new NotImplementedException();
+            _categoryTypeRepository.Update(entity);
         }
 
         public CategoryType Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _categoryTypeRepository.Get(x => x.CategoryTypeID == entityID);
         }
 
         public ICollection<CategoryType> GetAll()
         {
-            throw new NotImplementedException();
+            return _categoryTypeRepository.GetAll();
         }
     }
 }

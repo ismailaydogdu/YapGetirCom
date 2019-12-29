@@ -18,32 +18,32 @@ namespace YapGetirCom.BLL.Concrete
         }
         public void Insert(Recipe entity)
         {
-            throw new NotImplementedException();
+            _recipeRepository.Add(entity);
         }
 
         public void Delete(Recipe entity)
         {
-            throw new NotImplementedException();
+            _recipeRepository.Delete(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _recipeRepository.Delete(Get(id));
         }
 
         public void Update(Recipe entity)
         {
-            throw new NotImplementedException();
+            _recipeRepository.Update(entity);
         }
 
         public Recipe Get(int entityID)
         {
-            throw new NotImplementedException();
+            return _recipeRepository.Get(x => x.RecipeID == entityID);
         }
 
         public ICollection<Recipe> GetAll()
         {
-            throw new NotImplementedException();
+            return _recipeRepository.GetAll();
         }
     }
 }

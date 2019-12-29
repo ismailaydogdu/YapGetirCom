@@ -17,6 +17,13 @@
     <link href="~/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="~/css/IndexStyle.css" rel="stylesheet">
+    <style>
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1.25rem;
+        }
+    </style>
 </head>
 
 <body class="home">
@@ -43,8 +50,62 @@
             </nav>
             <!-- /.navbar -->
         </header>
-        @RenderBody()
 
+        @*<div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-3" style="margin-top:80px; position:fixed">
+                    <div class="row">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-header"> Kullanıcı Girişi</div>
+                                <div class="card-body">
+                                    <form>
+
+                                        <div class="form-group">
+                                            <label for="disabledTextInput">E-Posta</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="disabledTextInput">Parola</label>
+                                            <input type="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input class="" type="checkbox">
+                                            <label class="form-check-label">
+                                                Beni Hatırala
+                                            </label>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <a href="#">Üye Ol</a>
+
+                                        </div>
+                                        <button type="submit" class="btn theme-btn">Submit</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-top:80px;">
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+
+
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>*@
+
+        @RenderBody()
         <!-- start: FOOTER -->
         <footer class="footer">
             <div class="container">

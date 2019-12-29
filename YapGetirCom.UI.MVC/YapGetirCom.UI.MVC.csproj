@@ -186,8 +186,10 @@
     <Content Include="css\style.css" />
     <Content Include="css\style.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\whateverittakesbold.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\rest.jpg" />
     <Content Include="images\app.png" />
     <Content Include="images\arrow-big-dotted.png" />
     <Content Include="images\arrow-big.png" />
@@ -222,11 +224,18 @@
     <Content Include="images\zig-zag.png" />
     <Content Include="Scripts\animsition.min.js" />
     <Content Include="Scripts\bootstrap-slider.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\foodpicky.min.js" />
     <Content Include="Scripts\headroom.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\tether.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -237,6 +246,7 @@
     <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\FavoriteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
@@ -263,6 +273,10 @@
     <Content Include="bin\YapGetirCom.Core.dll.config" />
     <Content Include="bin\YapGetirCom.DAL.dll.config" />
     <Content Include="bin\YapGetirCom.UI.MVC.dll.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
@@ -273,6 +287,9 @@
     <Content Include="Views\Recipes\Index.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Deneme\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

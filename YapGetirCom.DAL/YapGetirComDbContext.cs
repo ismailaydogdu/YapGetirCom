@@ -36,6 +36,7 @@ namespace YapGetirCom.DAL
             modelBuilder.Configurations.Add(new UserMapping());
             modelBuilder.Configurations.Add(new UserTypeMapping());
             modelBuilder.Configurations.Add(new CategoryTypeMapping());
+            //modelBuilder.Configurations.Add(new )
 
         }
         public DbSet<User> Users { get; set; }
@@ -57,5 +58,7 @@ namespace YapGetirCom.DAL
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<MeasurementAndMaterial> MeasurementAndMaterials { get; set; }
+        public DbSet<MeasurementUnitOfMaterial> MeasurementUnitOfMaterials { get; set; }
     }
 }

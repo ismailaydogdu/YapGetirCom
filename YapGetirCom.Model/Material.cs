@@ -12,6 +12,7 @@ namespace YapGetirCom.Model
         public Material()
         {
             Recipes = new HashSet<Recipe>();
+            MeasurementAndMaterials = new List<MeasurementAndMaterial>();
         }
         public int MaterialID { get; set; }
         public int ProductID { get; set; }
@@ -22,5 +23,6 @@ namespace YapGetirCom.Model
 
         public virtual ICollection<Recipe> Recipes { get; set; }
         public virtual Product Product { get; set; }
+        public virtual ICollection<MeasurementAndMaterial> MeasurementAndMaterials { get; set; }
     }
 }

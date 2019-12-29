@@ -18,7 +18,6 @@ namespace YapGetirCom.DAL
                     new CategoryType(){CategoryTypeName="Recipe", IsActive=true,CreateDate=DateTime.Now},
                     new CategoryType(){CategoryTypeName="Product", IsActive=true,CreateDate=DateTime.Now}
                 };
-
             List<UserType> userTypes = new List<UserType>()
                 {
                     new UserType(){TypeName="Customer",IsActive=true,CreateDate=DateTime.Now},
@@ -32,7 +31,6 @@ namespace YapGetirCom.DAL
                     new Payment(){PaymentType="Kredi kartı",CreateDate=DateTime.Now,IsActive=true},
                     new Payment(){PaymentType="Kapıda Ödeme",CreateDate=DateTime.Now,IsActive=true}
                 };
-
             List<User> users = new List<User>()
                 {
                     new User(){
@@ -107,7 +105,7 @@ namespace YapGetirCom.DAL
                     },
                     new Category()
                     {
-                        CategoryName="Süt ürünleri",
+                        CategoryName="Süt ürünleri & Yumurta",
                         CategoryTypeID=3,
                         IsActive=true,
                         CreateDate=DateTime.Now
@@ -143,8 +141,6 @@ namespace YapGetirCom.DAL
                 UpdateDate = DateTime.Now.AddHours(-5),
 
             };
-
-
             Supplier supplier = new Supplier()
             {
                 CompanyName = "Dincel Gıda",
@@ -156,6 +152,111 @@ namespace YapGetirCom.DAL
                 IsActive = true,
                 CreateDate = DateTime.Now
             };
+            List<Product> products = new List<Product>()
+            {
+                new Product(){
+                    ProductName="Yumurta",
+                    CategoryID = 4,
+                    Image="yumurta.jpg",
+                    SupplierID=1,
+                    Price=15,
+                    Unit="30'lu Koli",
+                    Stock=13,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Tam Yağlı Süt",
+                    CategoryID = 4,
+                    Image="sut1.jpg",
+                    SupplierID=1,
+                    Price=4,
+                    Unit="1Lt",
+                    Stock=75,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Yarım Yağlı Süt",
+                    CategoryID = 4,
+                    Image="sut1.jpg",
+                    SupplierID=1,
+                    Price=3.75m,
+                    Unit="1Lt",
+                    Stock=55,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Bütün Tavuk L",
+                    CategoryID = 3,
+                    Image="tavukL.jpg",
+                    SupplierID=1,
+                    Price=7.75m,
+                    Unit="Adet",
+                    Stock=25,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Dana Kuşbaşı",
+                    CategoryID = 3,
+                    Image="kusbasi.jpg",
+                    SupplierID=1,
+                    Price=37.75m,
+                    Unit="Kg",
+                    Stock=46,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Marul",
+                    CategoryID = 5,
+                    Image="marul.jpg",
+                    SupplierID=1,
+                    Price=1.75m,
+                    Unit="Demet",
+                    Stock=12,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Kuru Soğan",
+                    CategoryID = 3,
+                    Image="kurusagan.jpg",
+                    SupplierID=1,
+                    Price=3.75m,
+                    Unit="Demet",
+                    Stock=16,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Çilek",
+                    CategoryID = 6,
+                    Image="çilek.jpg",
+                    SupplierID=1,
+                    Price=7.75m,
+                    Unit="Kg",
+                    Stock=14,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+
+                new Product(){
+                    ProductName="Muz",
+                    CategoryID = 6,
+                    Image="muz.jpg",
+                    SupplierID=1,
+                    Price=6.75m,
+                    Unit="Kg",
+                    Stock=36,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+
+            };
+
             context.CategoryTypes.AddRange(categoryTypes);
             context.SaveChanges();
             context.Categories.AddRange(categories);
@@ -170,7 +271,10 @@ namespace YapGetirCom.DAL
             context.SaveChanges();
             context.Suppliers.Add(supplier);
             context.SaveChanges();
-            
+            context.Products.AddRange(products);
+            context.SaveChanges();
+
+
 
         }
     }

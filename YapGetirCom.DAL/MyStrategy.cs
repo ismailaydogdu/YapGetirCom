@@ -412,11 +412,8 @@ namespace YapGetirCom.DAL
                     ProductID = 1,
                     UnitOfProductID = 8,
                     Price = 1M,
-                    
                 }
             };
-
-
 
             context.CategoryTypes.AddRange(categoryTypes);
             context.SaveChanges();
@@ -434,8 +431,6 @@ namespace YapGetirCom.DAL
             context.SaveChanges();
             context.Products.AddRange(products);
             context.SaveChanges();
-
-
 
         }
     }

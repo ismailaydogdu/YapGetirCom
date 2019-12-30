@@ -7,7 +7,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.BLL.Abstract
 {
-    public interface ICookService : IBaseService<Cook>
+    public interface IUnitOfProductService : IBaseService<UnitOfProduct>
     {
 
     }

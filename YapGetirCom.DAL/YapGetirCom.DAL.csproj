@@ -57,7 +57,8 @@
     <Compile Include="Mapping\CategoryTypeMapping.cs" />
     <Compile Include="Mapping\CommentMapping.cs" />
     <Compile Include="Mapping\CookMapping.cs" />
-    <Compile Include="Mapping\MaterialMapping.cs" />
+    <Compile Include="Mapping\MeasurementAndMaterialsMapping.cs" />
+    <Compile Include="Mapping\MeasurementUnitOfMaterialMapping.cs" />
     <Compile Include="Mapping\MessageMapping.cs" />
     <Compile Include="Mapping\OrderMapping.cs" />
     <Compile Include="Mapping\PaymentMapping.cs" />
@@ -79,7 +80,8 @@
     <Compile Include="Repositories\Abstract\ICategoryTypeRepository.cs" />
     <Compile Include="Repositories\Abstract\ICommentRepository.cs" />
     <Compile Include="Repositories\Abstract\ICookRepository.cs" />
-    <Compile Include="Repositories\Abstract\IMaterialRepository.cs" />
+    <Compile Include="Repositories\Abstract\IUnitAndProductRepository.cs" />
+    <Compile Include="Repositories\Abstract\IUnitOfProductRepository.cs" />
     <Compile Include="Repositories\Abstract\IMessageRepository.cs" />
     <Compile Include="Repositories\Abstract\IOrderRepository.cs" />
     <Compile Include="Repositories\Abstract\IPaymentRepository.cs" />
@@ -99,7 +101,8 @@
     <Compile Include="Repositories\Concrete\CategoryTypeRepository.cs" />
     <Compile Include="Repositories\Concrete\CommentRepository.cs" />
     <Compile Include="Repositories\Concrete\CookRepository.cs" />
-    <Compile Include="Repositories\Concrete\MaterialRepository.cs" />
+    <Compile Include="Repositories\Concrete\UnitAndProductRepository.cs" />
+    <Compile Include="Repositories\Concrete\UnitOfProductRepository.cs" />
     <Compile Include="Repositories\Concrete\MessageRepository.cs" />
     <Compile Include="Repositories\Concrete\OrderRepository.cs" />
     <Compile Include="Repositories\Concrete\PaymentRepository.cs" />

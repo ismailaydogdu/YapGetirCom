@@ -15,7 +15,6 @@ namespace YapGetirCom.DAL
         ICategoryTypeRepository CategoryTypeRepository { get; }
         ICommentRepository CommentRepository { get; }
         ICookRepository CookRepository { get; }
-        IMaterialRepository MaterialRepository { get; }
         IMessageRepository MessageRepository { get; }
         IOrderRepository OrderRepository { get; }
         IPaymentRepository PaymentRepository { get; }

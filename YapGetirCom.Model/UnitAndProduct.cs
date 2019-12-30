@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using YapGetirCom.Core.Entity;
+
+namespace YapGetirCom.Model
+{
+    public class UnitAndProduct : IEntity
+    {
+        public UnitAndProduct()
+        {
+            Recipes = new HashSet<Recipe>();
+        }
+        public int UnitAndProductID { get; set; }
+        public int ProductID { get; set; }
+        public int UnitOfProductID { get; set; }
+        public decimal Price { get; set; }
+
+
+        public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual UnitOfProduct UnitOfProduct { get; set; }
+
+    }
+}

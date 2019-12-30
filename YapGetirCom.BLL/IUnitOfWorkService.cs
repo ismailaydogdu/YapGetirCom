@@ -14,7 +14,6 @@ namespace YapGetirCom.BLL
         ICategoryTypeService CategoryTypeService { get; }
         ICommentService CommentService { get; }
         ICookService CookService { get; }
-        IMaterialService MaterialService { get; }
         IMessageService MessageService { get; }
         IOrderService OrderService { get; }
         IPaymentService PaymentService { get; }

@@ -20,12 +20,12 @@ namespace YapGetirCom.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
             modelBuilder.Configurations.Add(new ProductMapping());
             modelBuilder.Configurations.Add(new CampaignMapping());
             modelBuilder.Configurations.Add(new CategoryMapping());
             modelBuilder.Configurations.Add(new CommentMapping());
             modelBuilder.Configurations.Add(new CookMapping());
-            modelBuilder.Configurations.Add(new MaterialMapping());
             modelBuilder.Configurations.Add(new OrderMapping());
             modelBuilder.Configurations.Add(new PaymentMapping());
             modelBuilder.Configurations.Add(new RecipeMapping());
@@ -36,7 +36,8 @@ namespace YapGetirCom.DAL
             modelBuilder.Configurations.Add(new UserMapping());
             modelBuilder.Configurations.Add(new UserTypeMapping());
             modelBuilder.Configurations.Add(new CategoryTypeMapping());
-            //modelBuilder.Configurations.Add(new )
+            modelBuilder.Configurations.Add(new MeasurementAndMaterialsMapping());
+            modelBuilder.Configurations.Add(new MeasurementUnitOfMaterialMapping());
 
         }
         public DbSet<User> Users { get; set; }
@@ -48,7 +49,6 @@ namespace YapGetirCom.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Material> Materials { get; set; }
         public DbSet<Cook> Cooks { get; set; }
         public DbSet<Comment> GetComments { get; set; }
         public DbSet<CategoryType> CategoryTypes { get; set; }
@@ -58,7 +58,7 @@ namespace YapGetirCom.DAL
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
-        public DbSet<MeasurementAndMaterial> MeasurementAndMaterials { get; set; }
-        public DbSet<MeasurementUnitOfMaterial> MeasurementUnitOfMaterials { get; set; }
+        public DbSet<UnitAndProduct> MeasurementAndMaterials { get; set; }
+        public DbSet<UnitOfProduct> MeasurementUnitOfMaterials { get; set; }
     }
 }

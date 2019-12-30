@@ -22,7 +22,6 @@ namespace YapGetirCom.DAL
             CategoryTypeRepository = new CategoryTypeRepository(_db);
             CommentRepository = new CommentRepository(_db);
             CookRepository = new CookRepository(_db);
-            MaterialRepository = new MaterialRepository(_db);
             MessageRepository = new MessageRepository(_db);
             OrderRepository = new OrderRepository(_db);
             PaymentRepository = new PaymentRepository(_db);
@@ -43,7 +42,6 @@ namespace YapGetirCom.DAL
         public ICategoryTypeRepository CategoryTypeRepository { get; private set; }
         public ICommentRepository CommentRepository { get; private set; }
         public ICookRepository CookRepository { get; private set; }
-        public IMaterialRepository MaterialRepository { get; private set; }
         public IMessageRepository MessageRepository { get; private set; }
         public IOrderRepository OrderRepository { get; private set; }
         public IPaymentRepository PaymentRepository { get; private set; }

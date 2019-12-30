@@ -11,7 +11,7 @@ namespace YapGetirCom.Model
     {
         public Product()
         {
-            Materials = new HashSet<Material>();
+            MeasurementAndMaterials = new HashSet<UnitAndProduct>();
             ProductOrderDetails = new HashSet<ProductOrderDetail>();
         }
         public int ProductID { get; set; }
@@ -25,7 +25,7 @@ namespace YapGetirCom.Model
 
         public Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
-        public virtual ICollection<Material> Materials { get; set; }
+        public virtual ICollection<UnitAndProduct> MeasurementAndMaterials { get; set; }
         public virtual ICollection<ProductOrderDetail> ProductOrderDetails { get; set; }
 
 

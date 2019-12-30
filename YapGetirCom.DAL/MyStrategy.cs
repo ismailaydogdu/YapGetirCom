@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class MyStrategy : DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
+    class MyStrategy : DropCreateDatabaseAlways<YapGetirComDbContext>
     {
         protected override void Seed(YapGetirComDbContext context)
         {
@@ -129,29 +129,82 @@ namespace YapGetirCom.DAL
                     }
 
                 };
-            Restaurant restaurant = new Restaurant()
-            {
-                CompanyName = "Bilge Kadın Ev Yemekleri",
-                CategoryID = 1,
-                IsFavourite = true,
-                UserID = 2,
-                Image = "restaurant1.jpg",
-                IsActive = true,
-                CreateDate = DateTime.Now,
-                UpdateDate = DateTime.Now.AddHours(-5),
 
-            };
-            Supplier supplier = new Supplier()
+            List<Restaurant> restaurants = new List<Restaurant>()
             {
-                CompanyName = "Dincel Gıda",
-                Address = "Bahçelievler",
-                City = "İstanbul",
-                Phone = "05123456789",
-                Country = "Türkiye",
-                UserID = 3,
-                IsActive = true,
-                CreateDate = DateTime.Now
+                new Restaurant
+                {
+                    CompanyName = "Bilge Kadın Ev Yemekleri",
+                    CategoryID = 1,
+                    IsFavourite = true,
+                    UserID = 2,
+                    Image = "restaurant1.jpg",
+                    IsActive = true,
+                    CreateDate = DateTime.Now,
+                },
+
+                new Restaurant()
+                {
+                    CompanyName = "Bilge Adam Restoran",
+                    CategoryID = 1,
+                    IsFavourite = true,
+                    UserID = 2,
+                    Image = "bilgeadamrestoran.jpg",
+                    IsActive = true,
+                    CreateDate = DateTime.Now,
+                },
+
+                new Restaurant()
+                {
+                    CompanyName = "Balkanlar Et Lokantası",
+                    CategoryID = 1,
+                    IsFavourite = false,
+                    UserID = 2,
+                    Image = "balkanlarlokanta.jpg",
+                    IsActive = true,
+                    CreateDate = DateTime.Now,
+                }
             };
+
+            List<Supplier> suppliers = new List<Supplier>()
+            {
+                new Supplier()
+                {
+                    CompanyName = "Dincel Gıda",
+                    Address = "Bahçelievler",
+                    City = "İstanbul",
+                    Phone = "05123456789",
+                    Country = "Türkiye",
+                    UserID = 3,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                },
+
+                new Supplier()
+                {
+                    CompanyName = "Sonar A.S.",
+                    Address = "Başakşehir",
+                    City = "İstanbul",
+                    Phone = "05373363534",
+                    Country = "Türkiye",
+                    UserID = 3,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                },
+
+                new Supplier()
+                {
+                    CompanyName = "Bilge Adam Catering",
+                    Address = "Kadıköy",
+                    City = "İstanbul",
+                    Phone = "02128541212",
+                    Country = "Türkiye",
+                    UserID = 3,
+                    IsActive = false,
+                    CreateDate = DateTime.Now
+                }
+            };
+
             List<Product> products = new List<Product>()
             {
                 new Product(){
@@ -254,8 +307,116 @@ namespace YapGetirCom.DAL
                     IsActive=true,
                     CreateDate=DateTime.Now,
                 },
-
             };
+
+            List<Campaign> campaigns = new List<Campaign>()
+            {
+                new Campaign()
+                {
+                    CampaignName = "Yılbaşı indirimi",
+                    CampaignStartTime = DateTime.Now.AddDays(5),
+                    CampaignFinishTime = DateTime.Now.AddDays(15),
+                    IsActive = true,
+                    CreateDate = DateTime.Now,
+                },
+
+                new Campaign()
+                {
+                    CampaignName = "Yaz indirimi",
+                    CampaignStartTime = DateTime.Now.AddDays(150),
+                    CampaignFinishTime = DateTime.Now.AddDays(155),
+                    IsActive = true,
+                    CreateDate = DateTime.Now,
+                }
+            };
+
+            List<Cook> cooks = new List<Cook>()
+            {
+                new Cook()
+                {
+                    FirstName = "Somer",
+                    LastName = "Sivrioglu",
+                    RestaurantID = 2,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                },
+
+                new Cook()
+                {
+                    FirstName = "Danilo",
+                    LastName = "Zanna",
+                    RestaurantID = 1,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                },
+
+                new Cook()
+                {
+                    FirstName = "Nusret",
+                    LastName = "Gökçe",
+                    RestaurantID = 3,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                },
+
+                new Cook()
+                {
+                    FirstName = "Czn",
+                    LastName = "Burak",
+                    RestaurantID = 3,
+                    IsActive = true,
+                    CreateDate = DateTime.Now
+                }
+            };
+
+            List<UnitOfProduct> measurementUnitOfMaterials =new List<UnitOfProduct>()
+            {
+                new UnitOfProduct()
+                {
+                    Name = "Çay bardağı"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Su bardağı"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Çay kaşığı"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Tatlı kaşığı"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Yemek kaşığı"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Paket"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Kase"
+                },
+                new UnitOfProduct()
+                {
+                    Name = "Adet"
+                },
+            };
+
+            List<UnitAndProduct> measurementAndMaterials = new List<UnitAndProduct>()
+            {
+                new UnitAndProduct()
+                {
+                    ProductID = 1,
+                    UnitOfProductID = 8,
+                    Price = 1M,
+                    
+                }
+            };
+
+
 
             context.CategoryTypes.AddRange(categoryTypes);
             context.SaveChanges();
@@ -267,9 +428,9 @@ namespace YapGetirCom.DAL
             context.SaveChanges();
             context.Users.AddRange(users);
             context.SaveChanges();
-            context.Restaurants.Add(restaurant);
+            context.Restaurants.AddRange(restaurants);
             context.SaveChanges();
-            context.Suppliers.Add(supplier);
+            context.Suppliers.AddRange(suppliers);
             context.SaveChanges();
             context.Products.AddRange(products);
             context.SaveChanges();

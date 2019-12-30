@@ -19,7 +19,6 @@ namespace YapGetirCom.BLL.IoC.Ninject
             Bind<ICategoryTypeRepository>().To<CategoryTypeRepository>();
             Bind<ICommentRepository>().To<CommentRepository>();
             Bind<ICookRepository>().To<CookRepository>();
-            Bind<IMaterialRepository>().To<MaterialRepository>();
             Bind<IMessageRepository>().To<MessageRepository>();
             Bind<IOrderRepository>().To<OrderRepository>();
             Bind<IPaymentRepository>().To<PaymentRepository>();
@@ -34,6 +33,8 @@ namespace YapGetirCom.BLL.IoC.Ninject
             Bind<ISupplierRepository>().To<SupplierRepository>();
             Bind<IUserRepository>().To<UserRepository>();
             Bind<IUserTypeRepository>().To<UserTypeRepository>();
+            Bind<IUnitAndProductRepository>().To<UnitAndProductRepository>();
+            Bind<IUnitOfProductRepository>().To<UnitOfProductRepository>();
 
         }
     }

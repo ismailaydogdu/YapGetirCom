@@ -72,7 +72,6 @@ namespace YapGetirCom.UI.MVC.App_Start
             _kernel.Bind<ICategoryTypeService>().To<CategoryTypeService>();
             _kernel.Bind<ICommentService>().To<CommentService>();
             _kernel.Bind<ICookService>().To<CookService>();
-            _kernel.Bind<IMaterialService>().To<MaterialService>();
             _kernel.Bind<IMessageService>().To<MessageService>();
             _kernel.Bind<IOrderService>().To<OrderService>();
             _kernel.Bind<IPaymentService>().To<PaymentService>();
@@ -87,6 +86,8 @@ namespace YapGetirCom.UI.MVC.App_Start
             _kernel.Bind<ISupplierService>().To<SupplierService>();
             _kernel.Bind<IUserService>().To<UserService>();
             _kernel.Bind<IUserTypeService>().To<UserTypeService>();
+            _kernel.Bind<IUnitAndProductService>().To<UnitAndProductService>();
+            _kernel.Bind<IUnitOfProductService>().To<UnitOfProductService>();
 
             _kernel.Load<CustomDALModule>();
         }

@@ -70,6 +70,7 @@
     <Compile Include="Mapping\SharedMapping.cs" />
     <Compile Include="Mapping\StockMapping.cs" />
     <Compile Include="Mapping\SupplierMapping.cs" />
+    <Compile Include="Mapping\UnitAndProductMapping.cs" />
     <Compile Include="Mapping\UserMapping.cs" />
     <Compile Include="Mapping\UserTypeMapping.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Repositories\Abstract\ICategoryTypeRepository.cs" />
     <Compile Include="Repositories\Abstract\ICommentRepository.cs" />
     <Compile Include="Repositories\Abstract\ICookRepository.cs" />
+    <Compile Include="Repositories\Abstract\IUnitAndProductRecipeRepository.cs" />
     <Compile Include="Repositories\Abstract\IUnitAndProductRepository.cs" />
     <Compile Include="Repositories\Abstract\IUnitOfProductRepository.cs" />
     <Compile Include="Repositories\Abstract\IMessageRepository.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Repositories\Concrete\CategoryTypeRepository.cs" />
     <Compile Include="Repositories\Concrete\CommentRepository.cs" />
     <Compile Include="Repositories\Concrete\CookRepository.cs" />
+    <Compile Include="Repositories\Concrete\UnitAndProductRecipeRepository.cs" />
     <Compile Include="Repositories\Concrete\UnitAndProductRepository.cs" />
     <Compile Include="Repositories\Concrete\UnitOfProductRepository.cs" />
     <Compile Include="Repositories\Concrete\MessageRepository.cs" />

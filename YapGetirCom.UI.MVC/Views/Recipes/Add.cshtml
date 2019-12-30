@@ -29,10 +29,16 @@
                         <div class="form-horizontal contact-form" role="form">
                             <fieldset>
                                 <div class="row form-group">
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-12">
                                         <input class="form-control" id="fname" name="fname" type="text" placeholder="Tarif Adını Giriniz *" required>
                                     </div>
-                                    <div class="col-xs-6">
+                                    </div>
+
+                                @for (int i = 0; i < 5; i++)
+                                {
+
+                                    <div class="row form-group mt-1">
+                                        <div class="col-xs-4">
                                         <select class="form-control b-r-0" id="exampleSelect1">
                                             <option>Malzeme Seçimi *</option>
                                             <option>Un</option>
@@ -41,41 +47,42 @@
                                         </select>
                                         <br>
                                     </div>
-                                    <div class="row form-group">
-                                        <div class="col-xs-6">
+                                        <div class="col-xs-4">
                                             <input class="form-control" id="email" name="email" type="email" placeholder="Malzeme Ölçümü *" required>
                                         </div>
-                                        <div class="col-xs-6">
+                                        <div class="col-xs-4">
                                             <input class="form-control" id="phone" name="phone" type="tel" placeholder="Malzeme Miktarı *">
                                         </div>
                                     </div>
+                                }
 
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Ürün Seç</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Açıklama</small>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Restaurant Seç</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Açıklama</small>
-                                    </div>
+                                    
+                            <div class="form-group">
+                                <label for="exampleInputFile">Kategori Seçimi</label>
+                                <select class="form-control b-r-0" id="exampleSelect1">
+                                    <option>Rest Seçimi *</option>
+                                    <option>rest1</option>
+                                    <option>rest2</option>
+                                    <option>rest3</option>
+                                </select>
+                            </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputFile">Açıklama Ekle</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Açıklama</small>
+                                        <textarea class="form-control"></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Farklı Kaydet</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Açıklama</small>
+                                        <label for="exampleInputFile">Tarif Fotoğrafı Ekle</label>
+                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
                                     </div>
 
 
                                 <p>
                                     <button type="submit" class="btn theme-btn">Tarifi Yayınla</button>
                                 </p>
-                                </div>
+                              
                             </fieldset>
                         </div>
                         <!-- End Contact form -->

@@ -47,6 +47,7 @@
     <Compile Include="CategoryType.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Cook.cs" />
+    <Compile Include="UnitAndProductRecipe.cs" />
     <Compile Include="UnitOfProduct.cs" />
     <Compile Include="UnitAndProduct.cs" />
     <Compile Include="Message.cs" />

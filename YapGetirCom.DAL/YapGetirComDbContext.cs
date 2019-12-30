@@ -58,7 +58,8 @@ namespace YapGetirCom.DAL
         public DbSet<ProductOrder> ProductOrders { get; set; }
         public DbSet<ProductOrderDetail> ProductOrderDetails { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
-        public DbSet<UnitAndProduct> MeasurementAndMaterials { get; set; }
-        public DbSet<UnitOfProduct> MeasurementUnitOfMaterials { get; set; }
+        public DbSet<UnitAndProduct> UnitAndProducts { get; set; }
+        public DbSet<UnitOfProduct> UnitOfProducts { get; set; }
+        public DbSet<UnitAndProductRecipe> UnitAndProductRecipes { get; set; }
     }
 }

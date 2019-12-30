@@ -12,7 +12,7 @@ namespace YapGetirCom.Model
         public Recipe()
         {
             Comments = new HashSet<Comment>();
-            MeasurementAndMaterials = new HashSet<UnitAndProduct>();
+            UnitAndProductRecipes = new HashSet<UnitAndProductRecipe>();
             Campaigns = new HashSet<Campaign>();
             Orders = new HashSet<Order>();
             Scorings = new HashSet<Scoring>();
@@ -29,7 +29,7 @@ namespace YapGetirCom.Model
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<UnitAndProduct> MeasurementAndMaterials { get; set; }
+        public virtual ICollection<UnitAndProductRecipe> UnitAndProductRecipes { get; set; }
         public virtual ICollection<Campaign> Campaigns { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<Scoring> Scorings { get; set; }

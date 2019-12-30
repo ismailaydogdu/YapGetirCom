@@ -11,7 +11,7 @@ namespace YapGetirCom.Model
     {
         public UnitAndProduct()
         {
-            Recipes = new HashSet<Recipe>();
+            UnitAndProductRecipes = new HashSet<UnitAndProductRecipe>();
         }
         public int UnitAndProductID { get; set; }
         public int ProductID { get; set; }
@@ -19,7 +19,7 @@ namespace YapGetirCom.Model
         public decimal Price { get; set; }
 
 
-        public virtual ICollection<Recipe> Recipes { get; set; }
+        public virtual ICollection<UnitAndProductRecipe> UnitAndProductRecipes { get; set; }
         public virtual Product Product { get; set; }
         public virtual UnitOfProduct UnitOfProduct { get; set; }
 

@@ -50,6 +50,7 @@
     <Compile Include="Abstract\ICategoryTypeService.cs" />
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\ICookService.cs" />
+    <Compile Include="Abstract\IUnitAndProductRecipeService.cs" />
     <Compile Include="Abstract\IUnitAndProductService.cs" />
     <Compile Include="Abstract\IUnitOfProductService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Concrete\CategoryTypeService.cs" />
     <Compile Include="Concrete\CommentService.cs" />
     <Compile Include="Concrete\CookService.cs" />
+    <Compile Include="Concrete\UnitAndProductRecipeService.cs" />
     <Compile Include="Concrete\UnitAndProdutService.cs" />
     <Compile Include="Concrete\UnitOfProductService.cs" />
     <Compile Include="Concrete\MessageService.cs" />

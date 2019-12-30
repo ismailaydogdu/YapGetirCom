@@ -129,7 +129,6 @@ namespace YapGetirCom.DAL
                     }
 
                 };
-
             List<Restaurant> restaurants = new List<Restaurant>()
             {
                 new Restaurant
@@ -165,7 +164,6 @@ namespace YapGetirCom.DAL
                     CreateDate = DateTime.Now,
                 }
             };
-
             List<Supplier> suppliers = new List<Supplier>()
             {
                 new Supplier()
@@ -204,7 +202,6 @@ namespace YapGetirCom.DAL
                     CreateDate = DateTime.Now
                 }
             };
-
             List<Product> products = new List<Product>()
             {
                 new Product(){
@@ -308,7 +305,6 @@ namespace YapGetirCom.DAL
                     CreateDate=DateTime.Now,
                 },
             };
-
             List<Campaign> campaigns = new List<Campaign>()
             {
                 new Campaign()
@@ -329,7 +325,6 @@ namespace YapGetirCom.DAL
                     CreateDate = DateTime.Now,
                 }
             };
-
             List<Cook> cooks = new List<Cook>()
             {
                 new Cook()
@@ -368,8 +363,7 @@ namespace YapGetirCom.DAL
                     CreateDate = DateTime.Now
                 }
             };
-
-            List<UnitOfProduct> measurementUnitOfMaterials =new List<UnitOfProduct>()
+            List<UnitOfProduct> unitOfProducts = new List<UnitOfProduct>()
             {
                 new UnitOfProduct()
                 {
@@ -403,17 +397,57 @@ namespace YapGetirCom.DAL
                 {
                     Name = "Adet"
                 },
+                new UnitOfProduct()
+                {
+                    Name="Demet"
+                },
+                new UnitOfProduct()
+                {
+                    Name="Gram"
+                }
+                
             };
-
-            List<UnitAndProduct> measurementAndMaterials = new List<UnitAndProduct>()
+            List<UnitAndProduct> unitAndProducts = new List<UnitAndProduct>()
             {
                 new UnitAndProduct()
                 {
                     ProductID = 1,
                     UnitOfProductID = 8,
                     Price = 1M,
-                    
+                },
+                new UnitAndProduct()
+                {
+                    ProductID=2,
+                    UnitOfProductID=2,
+                    Price=2M
+                },
+                new UnitAndProduct()
+                {
+                    ProductID=2,
+                    UnitOfProductID=1,
+                    Price=1M
+                },
+                new UnitAndProduct()
+                {
+                    ProductID=8,
+                    UnitOfProductID=8,
+                    Price=0.5M
+                },
+                new UnitAndProduct()
+                {
+                    ProductID=6,
+                    UnitOfProductID=9,
+                    Price=4M
+                },
+                new UnitAndProduct()
+                {
+                    ProductID=5,
+                    UnitOfProductID=10,
+                    Price=0.09M
                 }
+
+
+
             };
 
 
@@ -434,7 +468,12 @@ namespace YapGetirCom.DAL
             context.SaveChanges();
             context.Products.AddRange(products);
             context.SaveChanges();
-
+            context.Cooks.AddRange(cooks);
+            context.SaveChanges();
+            context.UnitOfProducts.AddRange(unitOfProducts);
+            context.SaveChanges();
+            context.UnitAndProducts.AddRange(unitAndProducts);
+            context.SaveChanges();
 
 
         }

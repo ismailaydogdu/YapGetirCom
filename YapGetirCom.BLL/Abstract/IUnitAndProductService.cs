@@ -10,5 +10,6 @@ namespace YapGetirCom.BLL.Abstract
     public interface IUnitAndProductService : IBaseService<UnitAndProduct>
     {
         List<UnitAndProduct> GetByProductID(int productID);
+        UnitAndProduct GetByUnitOfProductIDAndProductID(int productID, int unitOfProductID);
     }
 }

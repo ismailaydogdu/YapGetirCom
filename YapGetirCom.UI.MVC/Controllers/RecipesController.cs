@@ -14,11 +14,14 @@ namespace YapGetirCom.UI.MVC.Controllers
         IProductService _productService;
         IUnitOfProductService _unitOfProductService;
         IUnitAndProductService _unitAndProductService;
-        public RecipesController(IProductService productService, IUnitOfProductService unitOfProductService, IUnitAndProductService unitAndProductService)
+        ICategoryService _categoryService;
+        
+        public RecipesController(IProductService productService, IUnitOfProductService unitOfProductService, IUnitAndProductService unitAndProductService,ICategoryService categoryService)
         {
             _productService = productService;
             _unitOfProductService = unitOfProductService;
             _unitAndProductService = unitAndProductService;
+            _categoryService = categoryService;
         }
         public ActionResult Index()
         {
@@ -27,6 +30,8 @@ namespace YapGetirCom.UI.MVC.Controllers
 
         public ActionResult Add()
         {
+            List<Category> categories = _categoryService.GetCategoriesByTypeID(2);
+            ViewBag.Categories = categories;
             List<UnitOfProduct> unitOfProducts = _unitOfProductService.GetAll().ToList();
             ViewBag.Units = unitOfProducts;
             List<Product> products = _productService.GetAll().ToList();
@@ -43,7 +48,17 @@ namespace YapGetirCom.UI.MVC.Controllers
             {
                 unitOfProducts.Add(_unitOfProductService.Get(item.UnitOfProductID));
             }
-            return Json(unitOfProducts, JsonRequestBehavior.AllowGet);
+            return Json(new SelectList(unitOfProducts, "UnitOfProductID", "Name"), JsonRequestBehavior.AllowGet);
+
+        }
+        
+        Recipe recipe = new Recipe();
+        public void UnitAndProductRecipeList(int productID,int unitOfProductID,int quantity)
+        {
+            UnitAndProduct unitAndProduct= _unitAndProductService.GetByUnitOfProductIDAndProductID(productID, unitOfProductID);
+            recipe.UnitAndProductRecipes.Add(new UnitAndProductRecipe { UnitAndProductID = unitAndProduct.UnitAndProductID, Quantity = quantity });
+
+
         }
     }
 }

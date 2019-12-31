@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class MyStrategy : DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
+    class MyStrategy : DropCreateDatabaseAlways<YapGetirComDbContext>
     {
         protected override void Seed(YapGetirComDbContext context)
         {
@@ -433,10 +433,115 @@ namespace YapGetirCom.DAL
                 new UnitAndProduct()
                 {
                     ProductID = 1,
-                    UnitOfProductID = 8,
+                    UnitOfProductID = 3,
                     Price = 1M,
                     
-                }
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 2,
+                    UnitOfProductID = 4,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 3,
+                    UnitOfProductID = 5,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 4,
+                    UnitOfProductID = 6,
+                    Price = 1M,
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 5,
+                    UnitOfProductID = 7,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 6,
+                    UnitOfProductID = 1,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 7,
+                    UnitOfProductID = 2,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 8,
+                    UnitOfProductID = 3,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 1,
+                    UnitOfProductID = 4,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 2,
+                    UnitOfProductID = 5,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 3,
+                    UnitOfProductID = 6,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 4,
+                    UnitOfProductID = 7,
+                    Price = 1M,
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 5,
+                    UnitOfProductID = 8,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 6,
+                    UnitOfProductID = 8,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 7,
+                    UnitOfProductID = 4,
+                    Price = 1M,
+
+                },
+                    new UnitAndProduct()
+                {
+                    ProductID = 8,
+                    UnitOfProductID = 4,
+                    Price = 1M,
+
+                },
+
+
             };
 
             context.CategoryTypes.AddRange(categoryTypes);

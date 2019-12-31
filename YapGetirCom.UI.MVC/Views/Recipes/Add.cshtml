@@ -3,8 +3,6 @@
 }
 @model UnitAndProduct
 
-
-
 <section class="bg-image space-md" data-image-src="http://placehold.it/1670x680">
     <div class="profile">
         <div class="container">
@@ -50,7 +48,7 @@
                                                     }
                                                 </select>*@
 
-                                            @Html.DropDownListFor(model => model.ProductID, ViewBag.Products as SelectList, "--Malzeme Secimi", new { @class = "form-control", id = "products" })
+                                            @Html.DropDownListFor(model => model.ProductID, ViewBag.Products as SelectList, "--Malzeme Secimi", new { @class = "form-control", id="products" })
 
                                         </td>
                                         <td>
@@ -79,10 +77,11 @@
                                 <div class="form-group">
                                     <label for="exampleInputFile">Kategori Seçimi</label>
                                     <select class="form-control b-r-0" id="exampleSelect1">
-                                        <option>Rest Seçimi *</option>
-                                        <option>rest1</option>
-                                        <option>rest2</option>
-                                        <option>rest3</option>
+                                        <option>Kategori Seçimi *</option>
+                                        @foreach (Category item in (List<Category>)ViewBag.Categories)
+                                        {
+                                            <option value="@item.CategoryID">@item.CategoryName</option>
+                                        }
                                     </select>
                                 </div>
 
@@ -136,24 +135,38 @@
     </div>
 </section>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-       
-        $("#products").change(function ()W {
-            $.get("/Recipe/GetUnits", { productID: $("#products").val() }, function (data) {
-                $.each(data, function (index, row) {
-                    $("#unitOfProduct").append("<option value='" + row.UnitOfProductID + "'>" + row.Name + "</option>");
-                });
-            });
-        })
+<script>
+   
+       $(function () {
+           $("#products").change(function () {
+               var products = $('#products').val();
+
+               $.ajax({
+                   url: '/Recipes/GetUnits',
+                   data: { productID: products },
+                   type: 'POST',
+                   dataType: 'json',
+                   success: function (data) {
+                       console.log(data);
+                       $("#unitOfProduct").empty();
+                       for (var i = 0; i < data.length; i++) {
+                           
+                           $("#unitOfProduct").append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+                       }
+
+                   }
+               });
+           });
+
     });
+
     $("#widget-body").on("click", "#btnAdd", function () {
 
-        var products = $("#products");
-        var unitOfProduct = $("#unitOfProduct");
+        
+        
         var quantityOfProduct = $("#quantityOfProduct");
 
         var tbody = $("#tblProducts > tbody")[0];
@@ -163,11 +176,11 @@
 
         //Add Product cell
         cell = $(row.insertCell(-1));
-        cell.html(products.val());
-
+        cell.html($('#products option:selected').text());
+        
         //Add Name cell.
         var cell = $(row.insertCell(-1));
-        cell.html(unitOfProduct.val());
+        cell.html($('#unitOfProduct option:selected').text());
 
         //Add Country cell.
         cell = $(row.insertCell(-1));
@@ -181,7 +194,9 @@
         btnRemove.attr("class", "btn btn-danger btn-sm");
         btnRemove.val("x");
         cell.append(btnRemove);
-
+        $.get("UnitAndProductRecipeList", { productID: $("#products").val(), unitOfProductID: $("#unitOfProduct").val(), quantity: $("#quantityOfProduct").val() });
+        var products = $("#products");
+        var unitOfProduct = $("#unitOfProduct");
         //Clear the TextBoxes.
         products.val("");
         unitOfProduct.val("");

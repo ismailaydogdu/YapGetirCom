@@ -9,6 +9,6 @@ namespace YapGetirCom.BLL.Abstract
 {
     public interface IUnitOfProductService : IBaseService<UnitOfProduct>
     {
-
+        
     }
 }

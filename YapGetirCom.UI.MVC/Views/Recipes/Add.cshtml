@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-
+@model UnitAndProduct
 
 
 
@@ -28,73 +28,79 @@
                         <!-- Contact form -->
                         <div class="form-horizontal contact-form" role="form">
                             <fieldset id="fieldset">
-                                
 
 
-                                    <div class="row form-group">
-                                        <div class="col-xs-12">
-                                            <input class="form-control" id="recipeName" name="recipeName" type="text" placeholder="Tarif Adını Giriniz *" required>
-                                        </div>
+
+                                <div class="row form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" id="recipeName" name="recipeName" type="text" placeholder="Tarif Adını Giriniz *" required>
                                     </div>
+                                </div>
 
-                                    <table id="tblProducts" width="100%">
-                                        <tbody></tbody>
-                                        <tr>
-                                            <td>
-                                            
-                                            <select class="form-control b-r-0" id="products" name="products">
-                                                <option>Malzeme Seçimi *</option>
-                                                <option>Un</option>
-                                                <option>Süt</option>
-                                                <option>Yumurta</option>
-                                            </select>
-                                            
-                                            </td>
-                                            <td>
-                                                <select class="form-control b-r-0" id="unitOfProduct" name="unitOfProduct">
-                                                    <option>Malzeme Birimi *</option>
-                                                    <option>Su Bardağı</option>
-                                                    <option>Çay Bardağı</option>
-                                                    <option>Adet</option>
-                                                </select>
-                                            </td>
+                                <table id="tblProducts" width="100%">
+                                    <tbody></tbody>
+                                    <tr>
                                         <td>
-                                                <input class="form-control" id="quantityOfProduct" name="quantityOfProduct" type="number" min="0" placeholder="Malzeme Miktarı *">
-                                           </td>
+
+                                            @*<select class="form-control b-r-0" id="products" name="products">
+                                                    <option>Malzeme Seçimi *</option>
+                                                    @foreach (Product item in (List<Product>)ViewBag.Products)
+                                                    {
+                                                        <option value="@item.ProductID">@item.ProductName</option>
+                                                    }
+                                                </select>*@
+
+                                            @Html.DropDownListFor(model => model.ProductID, ViewBag.Products as SelectList, "--Malzeme Secimi", new { @class = "form-control", id = "products" })
+
+                                        </td>
+                                        <td>
+                                            @*<select class="form-control b-r-0" id="unitOfProduct" name="unitOfProduct">
+                                                <option>Malzeme Birimi *</option>
+                                                    @foreach (UnitOfProduct item in (List<UnitOfProduct>)ViewBag.Units)
+                                                    {
+                                                        <option value="@item.UnitOfProductID">@item.Name</option>
+                                                    }
+                                                </select>*@
+
+                                            @Html.DropDownListFor(model => model.UnitOfProductID, new SelectList(" "), "-Birim Seçimi-", new { @class = "form-control", id = "unitOfProduct" })
+                                        </td>
+                                        <td>
+                                            <input class="form-control" id="quantityOfProduct" name="quantityOfProduct" type="number" min="0" placeholder="Malzeme Miktarı *">
+                                        </td>
                                         <td>
                                             <input type="button" id="btnAdd" class="btn btn-success float-xs-right w-100" value="Ekle" />
                                         </td>
 
-                                            
-                                        </tr>
-                                    </table>
+
+                                    </tr>
+                                </table>
 
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Kategori Seçimi</label>
-                                        <select class="form-control b-r-0" id="exampleSelect1">
-                                            <option>Rest Seçimi *</option>
-                                            <option>rest1</option>
-                                            <option>rest2</option>
-                                            <option>rest3</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Kategori Seçimi</label>
+                                    <select class="form-control b-r-0" id="exampleSelect1">
+                                        <option>Rest Seçimi *</option>
+                                        <option>rest1</option>
+                                        <option>rest2</option>
+                                        <option>rest3</option>
+                                    </select>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Açıklama Ekle</label>
-                                        <textarea class="form-control"></textarea>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Açıklama Ekle</label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Tarif Fotoğrafı Ekle</label>
-                                        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Tarif Fotoğrafı Ekle</label>
+                                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                </div>
 
 
-                                    <p>
-                                        <button type="submit" class="btn theme-btn">Tarifi Yayınla</button>
-                                    </p>
-                                
+                                <p>
+                                    <button type="submit" class="btn theme-btn">Tarifi Yayınla</button>
+                                </p>
+
                             </fieldset>
                         </div>
                         <!-- End Contact form -->
@@ -134,6 +140,16 @@
 <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 
 <script type="text/javascript">
+    $(document).ready(function () {
+       
+        $("#products").change(function ()W {
+            $.get("/Recipe/GetUnits", { productID: $("#products").val() }, function (data) {
+                $.each(data, function (index, row) {
+                    $("#unitOfProduct").append("<option value='" + row.UnitOfProductID + "'>" + row.Name + "</option>");
+                });
+            });
+        })
+    });
     $("#widget-body").on("click", "#btnAdd", function () {
 
         var products = $("#products");
@@ -170,21 +186,24 @@
         products.val("");
         unitOfProduct.val("");
         quantityOfProduct.val("");
-        
+
     });
 
     function Remove(button) {
         //Determine the reference of the Row using the Button.
-        var row = $(button).closest("tr");
-        var name = $("td", row).eq(0).html();
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
         if (confirm("Silmek istiyor musunuz? " + name)) {
             //Get the reference of the Table.
-            var table = $("#products")[0];
+            var table = $("#tblProducts")[0];
 
             //Delete the Table row using it's Index.
-            table.deleteRow(row[0].rowIndex);
+            //table.deleteRow(row[0].rowIndex);
+            table.deleteRow(row[0].rowIdnex);
         }
     };
+
+
 
     $("body").on("click", "#btnSave", function () {
         //Loop through the Table rows and build a JSON array.

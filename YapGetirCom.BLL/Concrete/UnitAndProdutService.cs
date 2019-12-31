@@ -45,5 +45,10 @@ namespace YapGetirCom.BLL.Concrete
         {
             return _UnitAndProductRepository.GetAll();
         }
+
+        public List<UnitAndProduct> GetByProductID(int productID)
+        {
+            return _UnitAndProductRepository.GetAll(x => x.ProductID == productID).ToList();
+        }
     }
 }

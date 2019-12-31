@@ -17,18 +17,20 @@ namespace YapGetirCom.UI.MVC.Controllers
         private readonly IUserService _userService;
 
         private readonly IUserTypeService _userTypeService;
-
+        
         public LoginController(IUserService userService, IUserTypeService userTypeService)
         {
 
             _userService = userService;
             _userTypeService = userTypeService;
-        
+            
+            
 
         }
         public ActionResult Index()
         {
-            
+            List<UnitAndProductRecipe> list = new List<UnitAndProductRecipe>();
+            Session["unitAndProductRecipes"] = list;
             GetUserTypes();
             return View();
         }
@@ -59,6 +61,7 @@ namespace YapGetirCom.UI.MVC.Controllers
             {
                 Session["user"] = user;
                 return RedirectToAction("Index", "Home");
+                
             }
             else
             {

@@ -1796,6 +1796,9 @@
     <Content Include="Global.asax" />
     <Content Include="images\balkanlarlokanta.jpg" />
     <Content Include="images\bilgeadamrestoran.jpg" />
+    <Content Include="images\recipes\054fd2ad-6712-401c-b914-18e55623e453.jpg" />
+    <Content Include="images\recipes\9518e485-a38d-4e0f-88c1-7fbaa3ebe058.jpg" />
+    <Content Include="images\recipes\ec308783-9b30-4a2c-bd0d-368e10978aba.jpg" />
     <Content Include="images\rest.jpg" />
     <Content Include="images\app.png" />
     <Content Include="images\arrow-big-dotted.png" />
@@ -2006,6 +2009,10 @@
     <Content Include="Areas\Admin\Assest\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Assest\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Admin\Assest\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Cook\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2022,6 +2029,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CookController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Controllers\CampaignController.cs" />
     <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\FavoriteController.cs" />
@@ -2034,6 +2045,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecipeAddModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2081,7 +2093,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\AddRecipe\" />
   </ItemGroup>
   <ItemGroup>

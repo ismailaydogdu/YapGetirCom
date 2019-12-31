@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class MyStrategy : DropCreateDatabaseAlways<YapGetirComDbContext>
+    class MyStrategy : DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
     {
         protected override void Seed(YapGetirComDbContext context)
         {

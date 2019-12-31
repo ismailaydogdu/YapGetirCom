@@ -23,7 +23,7 @@ namespace YapGetirCom.Model
         public string Unit { get; set; }
         public string Image { get; set; }
 
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<UnitAndProduct> UnitAndProducts { get; set; }
         public virtual ICollection<ProductOrderDetail> ProductOrderDetails { get; set; }

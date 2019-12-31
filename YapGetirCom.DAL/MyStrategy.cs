@@ -8,7 +8,7 @@ using YapGetirCom.Model;
 
 namespace YapGetirCom.DAL
 {
-    class MyStrategy : DropCreateDatabaseAlways<YapGetirComDbContext>
+    class MyStrategy : DropCreateDatabaseIfModelChanges<YapGetirComDbContext>
     {
         protected override void Seed(YapGetirComDbContext context)
         {
@@ -83,7 +83,28 @@ namespace YapGetirCom.DAL
                     new Category
                     {
                         CategoryName="Ev Yemekleri",
-                        CategoryTypeID=2,
+                        CategoryTypeID=1,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+                     },
+                     new Category
+                    {
+                        CategoryName="Balık Restoranları",
+                        CategoryTypeID=1,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+                     },
+                    new Category
+                    {
+                        CategoryName="İtalyan Mutfağı",
+                        CategoryTypeID=1,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+                     },
+                    new Category
+                    {
+                        CategoryName="Çin Mutfağı",
+                        CategoryTypeID=1,
                         IsActive=true,
                         CreateDate=DateTime.Now
                      },
@@ -206,7 +227,7 @@ namespace YapGetirCom.DAL
             {
                 new Product(){
                     ProductName="Yumurta",
-                    CategoryID = 4,
+                    CategoryID = 7,
                     Image="yumurta.jpg",
                     SupplierID=1,
                     Price=15,
@@ -217,7 +238,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Tam Yağlı Süt",
-                    CategoryID = 4,
+                    CategoryID = 7,
                     Image="sut1.jpg",
                     SupplierID=1,
                     Price=4,
@@ -228,7 +249,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Yarım Yağlı Süt",
-                    CategoryID = 4,
+                    CategoryID = 7,
                     Image="sut1.jpg",
                     SupplierID=1,
                     Price=3.75m,
@@ -239,9 +260,9 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Bütün Tavuk L",
-                    CategoryID = 3,
+                    CategoryID = 6,
                     Image="tavukL.jpg",
-                    SupplierID=1,
+                    SupplierID=3,
                     Price=7.75m,
                     Unit="Adet",
                     Stock=25,
@@ -250,9 +271,9 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Dana Kuşbaşı",
-                    CategoryID = 3,
+                    CategoryID = 6,
                     Image="kusbasi.jpg",
-                    SupplierID=1,
+                    SupplierID=3,
                     Price=37.75m,
                     Unit="Kg",
                     Stock=46,
@@ -261,9 +282,9 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Marul",
-                    CategoryID = 5,
+                    CategoryID = 8,
                     Image="marul.jpg",
-                    SupplierID=1,
+                    SupplierID=3,
                     Price=1.75m,
                     Unit="Demet",
                     Stock=12,
@@ -272,9 +293,9 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Kuru Soğan",
-                    CategoryID = 3,
+                    CategoryID = 8,
                     Image="kurusagan.jpg",
-                    SupplierID=1,
+                    SupplierID=2,
                     Price=3.75m,
                     Unit="Demet",
                     Stock=16,
@@ -283,9 +304,9 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Çilek",
-                    CategoryID = 6,
+                    CategoryID = 9,
                     Image="çilek.jpg",
-                    SupplierID=1,
+                    SupplierID=2,
                     Price=7.75m,
                     Unit="Kg",
                     Stock=14,
@@ -295,9 +316,9 @@ namespace YapGetirCom.DAL
 
                 new Product(){
                     ProductName="Muz",
-                    CategoryID = 6,
+                    CategoryID = 9,
                     Image="muz.jpg",
-                    SupplierID=1,
+                    SupplierID=2,
                     Price=6.75m,
                     Unit="Kg",
                     Stock=36,

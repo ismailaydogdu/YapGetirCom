@@ -1794,6 +1794,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\whateverittakesbold.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\balkanlarlokanta.jpg" />
+    <Content Include="images\bilgeadamrestoran.jpg" />
     <Content Include="images\rest.jpg" />
     <Content Include="images\app.png" />
     <Content Include="images\arrow-big-dotted.png" />
@@ -1822,6 +1824,7 @@
     <Content Include="images\paypal.png" />
     <Content Include="images\peanuts.png" />
     <Content Include="images\phone-2.png" />
+    <Content Include="images\restaurant1.jpg" />
     <Content Include="images\stripe.png" />
     <Content Include="images\tick.png" />
     <Content Include="images\torn_paper_bottom.png" />

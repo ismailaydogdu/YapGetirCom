@@ -9,6 +9,6 @@ namespace YapGetirCom.BLL.Abstract
 {
     public interface ICategoryService : IBaseService<Category>
     {
-
+        List<Category> GetCategoriesByTypeID(int id);
     }
 }

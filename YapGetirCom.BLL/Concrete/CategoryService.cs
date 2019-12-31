@@ -45,5 +45,10 @@ namespace YapGetirCom.BLL.Concrete
         {
             return _categoryRepository.GetAll();
         }
+
+        public List<Category> GetCategoriesByTypeID(int typeId)
+        {
+            return _categoryRepository.GetAll(x => x.CategoryTypeID == typeId).ToList();
+        }
     }
 }

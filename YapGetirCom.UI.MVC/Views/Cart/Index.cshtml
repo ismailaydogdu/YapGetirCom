@@ -1,0 +1,178 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@model Order
+
+<div class="page-wrapper">
+    <div class="container">
+
+
+        <div class="row" style="margin-top:50px">
+            <div>
+                <div>
+                    <div class="col-lg-12">
+                        <table class="table table-hover" id="cart">
+                            <thead>
+                                <tr>
+                                    <th>Ürün ID</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Fiyat</th>
+
+                                    <th>Adet</th>
+                                    <th>Toplam Fiyat</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style='line-height:40px'>
+                                        item.Id
+                                    </td>
+                                    <td style='line-height:40px'>
+                                        item.Name
+                                    </td>
+                                    <td style='line-height:40px'>
+                                        item.UnitPrice
+                                    </td>
+
+                                    <td style='line-height:40px'>
+                                        item.Quantity
+                                    </td>
+                                    <td style='line-height:40px'>
+                                        (item.Quantity * item.UnitPrice)
+                                    </td>
+                                    <td>
+                                        <img onclick='$.Cart.Increase(item.Id)' width='40' height='40' src='/Content/Images/Add.png' data-toggle='tooltip' data-placement='right' title='Arttır' />
+                                        <img onclick='$.Cart.Decrease(item.Id)' width='40' height='40' src='/Content/Images/Remove.png' data-toggle='tooltip' data-placement='right' title='Eksilt' />
+                                        <img onclick='$.Cart.Remove(item.Id)' width='40' height='40' src='/Content/Images/Shopping.png' data-toggle='tooltip' data-placement='right' title='Sepetten Sil' />
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-lg-6 col-lg-offset-6">
+                        <label>Ödemeniz Gereken Toplam Tutar : <span id="totalCount"></span> $</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Session["user"]!=null)
+        {
+
+        <div class="row">
+            @using (Html.BeginForm("Order", "Cart", FormMethod.Post))
+            {
+                <table width="100%">
+                    <tr>
+                        <td>@Html.DropDownListFor(x => x.RestaurantID, ViewBag.Restaurants as SelectList, "--Restaurant  Secimi", new { @class = "form-control", id = "restaurants" })</td>
+                        <td>@Html.DropDownListFor(x => x.CookID, ViewBag.Cooks as SelectList, "--Aşçı Secimi", new { @class = "form-control", id = "cooks" })</td>
+                        <td>@Html.DropDownListFor(x => x.PaymentID, ViewBag.Payments as SelectList, "--Ödeme Tipi Secimi", new { @class = "form-control", id = "payments" })</td>
+                        <td>@Html.TextAreaFor(x => x.Address)</td>
+                        <td>@Html.TextBoxFor(x => x.RequestedDate)</td>
+                        <td><button class="btn btn-user">Siparisi Tamamla</button></td>
+                    </tr>
+                </table>
+            }
+        </div>
+        }
+        else
+        {
+            <h3>Siparişi Tamamlamak için lütfen <a href="/Login/Index">Giriş Yapınız</a></h3>
+        }
+
+    </div>
+
+
+</div>
+
+
+@*Layout içerisinde olan Jquery kütüphanesini görmeyeceğinden intellicanse yardımcı olmayacaktır. Geçici olarak buraya ekleyip sonrasında silebilirsiniz.*@
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+    // Sayfa içerisinde tooltip'lerin çalışması için gerekli default kod satırı.
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $(function () {
+
+        // Sayfa yiklendikten yarım saniye sonra, Istekde bulunularak data tablo içerisinde dolduruluyor.
+
+
+        // Cart olarak kapsayıcı bir Fonskiyon listesi oluşturuldu.
+        $.Cart = {
+            // Session'dan gelen verileri ekranda göstermek için Json formatında gelen data eğer boş ise kullanıcıya sepetin boş olduğunu gösteren bir imaj, dolu ise tabloya veriler ekleniyor.
+            List: function () {
+                $.getJSON("@Url.Action("List")", function (data) {
+                    $("#cart tbody tr").remove();
+                    var count = Object.keys(data).length;
+                    var totalCount = 0;
+                    if (count > 0) {
+                        $.each(data, function (key, item) {
+                            $("#cart tbody").append(
+                                "<tr><td style='line-height:40px'>"
+                                + item.Id + "</td><td style='line-height:40px'>"
+                                + item.ProductName + "</td><td style='line-height:40px'>"
+                                + item.UnitPrice + "</td><td style='line-height:40px'>"
+                                + item.Quantity + "</td><td style='line-height:40px'>" + (item.Quantity * item.UnitPrice) + "</td><td><img onclick='$.Cart.Increase(" + item.Id + ")' width='40' height='40' src='/Content/Images/Add.png' data-toggle='tooltip' data-placement='right' title='Arttır' /> <img onclick='$.Cart.Decrease(" + item.Id + ")' width='40' height='40' src='/Content/Images/Remove.png' data-toggle='tooltip' data-placement='right' title='Eksilt' /> <img onclick='$.Cart.Remove(" + item.Id + ")' width='40' height='40' src='/Content/Images/Shopping.png' data-toggle='tooltip' data-placement='right' title='Sepetten Sil' /></td></tr>")
+                            totalCount += (item.Quantity * item.UnitPrice);
+                        });
+                    }
+                    $("#totalCount").html(totalCount);
+                });
+            },
+
+            Increase: function (Id) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "Json",
+                    url: "@Url.Action("IncreaseCart", "Cart")/" + Id,
+                    success: function (data) {
+                        $.Cart.List();
+                    }
+                })
+            },
+            Decrease: function (Id) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "Json",
+                    url: "@Url.Action("DecreaseCart", "Cart")/" + Id,
+                    success: function (data) {
+                        $.Cart.List();
+                    }
+                })
+            },
+            Remove: function (Id) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "Json",
+                    url: "@Url.Action("Remove", "Cart")/" + Id,
+                    success: function (data) {
+                        $.Cart.List();
+                    }
+                })
+            }
+        }
+
+        //$.Cart.List()
+        setTimeout(function () { $.Cart.List() }, 500);
+    });
+</script>
+
+
+<script src="~/scripts/jquery-1.10.2.js"></script>
+
+
+<style type="text/css">
+    img:hover {
+        cursor: pointer;
+    }
+</style>

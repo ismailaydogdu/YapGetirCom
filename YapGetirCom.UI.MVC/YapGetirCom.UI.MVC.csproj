@@ -1779,6 +1779,13 @@
     <Content Include="bin\YapGetirCom.Model.pdb" />
     <Content Include="bin\YapGetirCom.UI.MVC.dll" />
     <Content Include="bin\YapGetirCom.UI.MVC.pdb" />
+    <Content Include="Content\Images\Add.png" />
+    <Content Include="Content\Images\Add1.png" />
+    <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\emptycart.jpg" />
+    <Content Include="Content\Images\Remove.png" />
+    <Content Include="Content\Images\Remove1.png" />
+    <Content Include="Content\Images\Shopping.png" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\animsition.min.css" />
@@ -1838,6 +1845,7 @@
     <Content Include="Scripts\bootstrap-slider.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Cart.js" />
     <Content Include="Scripts\foodpicky.min.js" />
     <Content Include="Scripts\headroom.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -2034,19 +2042,19 @@
     <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Cart\ProductCart.cs" />
     <Compile Include="Controllers\CampaignController.cs" />
     <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\FavoriteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\HomeVM.cs" />
     <Compile Include="Models\RecipeAddModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2074,7 +2082,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Favorite\Index.cshtml" />
     <Content Include="Views\Campaign\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />

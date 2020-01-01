@@ -20,7 +20,7 @@ namespace YapGetirCom.Model
         public int CookID { get; set; }
         public int UserID { get; set; }
         public decimal OrderPrice { get; set; }
-
+        public int Quantity { get; set; }
         public virtual Recipe Recipe { get; set; }
         public virtual Payment Payment { get; set; }
         public virtual Restaurant Restaurant { get; set; }

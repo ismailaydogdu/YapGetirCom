@@ -2093,6 +2093,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="images\products\" />
     <Folder Include="Views\AddRecipe\" />
   </ItemGroup>
   <ItemGroup>

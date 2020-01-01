@@ -26,6 +26,8 @@ namespace YapGetirCom.Model
         public int UserID { get; set; }
         public string Image { get; set; }
 
+        public decimal Price { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }

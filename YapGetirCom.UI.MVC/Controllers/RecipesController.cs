@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using YapGetirCom.BLL.Abstract;
 using YapGetirCom.Model;
-using YapGetirCom.UI.MVC.appClasses;
+
 
 namespace YapGetirCom.UI.MVC.Controllers
 {
@@ -28,6 +28,7 @@ namespace YapGetirCom.UI.MVC.Controllers
             _categoryService = categoryService;
             _recipeService = recipeService;
         }
+
         public ActionResult Index()
         {
             List<Recipe> recipes = _recipeService.GetAll().ToList();
@@ -61,6 +62,13 @@ namespace YapGetirCom.UI.MVC.Controllers
             recipe.IsActive = true;
             recipe.UserID = (Session["user"] as User).UserID;
             recipe.CreateDate = DateTime.Now;
+            recipe.Price = 0;
+            foreach (UnitAndProductRecipe item in recipe.UnitAndProductRecipes)
+            {
+                recipe.Price += item.UnitAndProduct.Price * item.Quantity;
+                item.UnitAndProduct = null;
+            }
+            
             _recipeService.Insert(recipe);
             
             return RedirectToAction("Index", "Recipes");
@@ -79,11 +87,11 @@ namespace YapGetirCom.UI.MVC.Controllers
 
         }
         
-
         public void UnitAndProductRecipeList(int productID, int unitOfProductID, int quantity)
         {
             UnitAndProduct unitAndProduct = _unitAndProductService.GetByUnitOfProductIDAndProductID(productID, unitOfProductID);
-            (Session["unitAndProductRecipes"] as List<UnitAndProductRecipe>).Add(new UnitAndProductRecipe { UnitAndProductID = unitAndProduct.UnitAndProductID, Quantity = quantity });
+            (Session["unitAndProductRecipes"] as List<UnitAndProductRecipe>).Add(new UnitAndProductRecipe { UnitAndProductID = unitAndProduct.UnitAndProductID, Quantity = quantity,UnitAndProduct=unitAndProduct });
+           
         }
 
         public void UnitAndProductRecipeListRemove(int index)

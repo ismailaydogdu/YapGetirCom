@@ -110,7 +110,31 @@ namespace YapGetirCom.DAL
                      },
                     new Category
                     {
-                        CategoryName="Pizza",
+                        CategoryName="Pizzacı",
+                        CategoryTypeID=2,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+
+                    },
+                    new Category
+                    {
+                        CategoryName="Ev Yemekleri",
+                        CategoryTypeID=2,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+
+                    },
+                    new Category
+                    {
+                        CategoryName="Hamburgerci",
+                        CategoryTypeID=2,
+                        IsActive=true,
+                        CreateDate=DateTime.Now
+
+                    },
+                    new Category
+                    {
+                        CategoryName="Simitçi",
                         CategoryTypeID=2,
                         IsActive=true,
                         CreateDate=DateTime.Now
@@ -259,9 +283,31 @@ namespace YapGetirCom.DAL
                     CreateDate=DateTime.Now,
                 },
                 new Product(){
-                    ProductName="Bütün Tavuk L",
+                    ProductName="Tavuk (Büyük Boy)",
                     CategoryID = 6,
                     Image="tavukL.jpg",
+                    SupplierID=3,
+                    Price=17.75m,
+                    Unit="Adet",
+                    Stock=25,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Tavuk (Orta Boy)",
+                    CategoryID = 6,
+                    Image="tavukM.jpg",
+                    SupplierID=3,
+                    Price=12.75m,
+                    Unit="Adet",
+                    Stock=25,
+                    IsActive=true,
+                    CreateDate=DateTime.Now,
+                },
+                new Product(){
+                    ProductName="Tavuk (Küçük Boy)",
+                    CategoryID = 6,
+                    Image="tavukS.jpg",
                     SupplierID=3,
                     Price=7.75m,
                     Unit="Adet",
@@ -274,7 +320,7 @@ namespace YapGetirCom.DAL
                     CategoryID = 6,
                     Image="kusbasi.jpg",
                     SupplierID=3,
-                    Price=37.75m,
+                    Price=50M,
                     Unit="Kg",
                     Stock=46,
                     IsActive=true,
@@ -426,69 +472,104 @@ namespace YapGetirCom.DAL
                 {
                     Name="Gram"
                 }
-                
+
             };
             List<UnitAndProduct> unitAndProducts = new List<UnitAndProduct>()
             {
                 new UnitAndProduct()
                 {
                     ProductID = 1,
-                    UnitOfProductID = 3,
+                    UnitOfProductID = 8,
                     Price = 1M,
-                    
+
                 },
                 new UnitAndProduct()
                 {
                     ProductID = 2,
-                    UnitOfProductID = 4,
+                    UnitOfProductID = 1,
+                    Price = 1M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 2,
+                    UnitOfProductID = 2,
+                    Price = 2M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 2,
+                    UnitOfProductID = 6,
+                    Price = 5M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 2,
+                    UnitOfProductID = 7,
+                    Price = 3M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 3,
+                    UnitOfProductID = 1,
                     Price = 1M,
 
                 },
                 new UnitAndProduct()
                 {
                     ProductID = 3,
-                    UnitOfProductID = 5,
-                    Price = 1M,
+                    UnitOfProductID = 2,
+                    Price = 2M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 3,
+                    UnitOfProductID = 6,
+                    Price = 5M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 3,
+                    UnitOfProductID = 7,
+                    Price = 3M,
 
                 },
                 new UnitAndProduct()
                 {
                     ProductID = 4,
-                    UnitOfProductID = 6,
-                    Price = 1M,
+                    UnitOfProductID = 8,
+                    Price = 30M,
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 5,
-                    UnitOfProductID = 7,
-                    Price = 1M,
+                    UnitOfProductID = 8,
+                    Price = 25M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 6,
-                    UnitOfProductID = 1,
-                    Price = 1M,
+                    UnitOfProductID = 8,
+                    Price = 20M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 7,
                     UnitOfProductID = 2,
                     Price = 1M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 8,
                     UnitOfProductID = 3,
-                    Price = 1M,
-
-                },
-                    new UnitAndProduct()
-                {
-                    ProductID = 1,
-                    UnitOfProductID = 4,
                     Price = 1M,
 
                 },
@@ -519,29 +600,53 @@ namespace YapGetirCom.DAL
                     Price = 1M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 6,
                     UnitOfProductID = 8,
                     Price = 1M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 7,
-                    UnitOfProductID = 4,
-                    Price = 1M,
+                    UnitOfProductID = 10,
+                    Price = 0.09M,
 
                 },
-                    new UnitAndProduct()
+                new UnitAndProduct()
                 {
                     ProductID = 8,
-                    UnitOfProductID = 4,
-                    Price = 1M,
-
+                    UnitOfProductID = 8,
+                    Price = 3M,
                 },
 
+                new UnitAndProduct()
+                {
+                    ProductID = 9,
+                    UnitOfProductID = 8,
+                    Price = 1M,
+                },
 
+                new UnitAndProduct()
+                {
+                    ProductID = 9,
+                    UnitOfProductID = 10, 
+                    Price = 0.005M,
+                },
+
+                new UnitAndProduct()
+                {
+                    ProductID = 10,
+                    UnitOfProductID = 8,
+                    Price = 1M,
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 11,
+                    UnitOfProductID = 8,
+                    Price = 5M,
+                },
             };
 
             context.CategoryTypes.AddRange(categoryTypes);

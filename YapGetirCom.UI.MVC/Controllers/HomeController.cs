@@ -6,26 +6,46 @@ using System.Web.Mvc;
 using YapGetirCom.BLL.Abstract;
 using YapGetirCom.BLL.Concrete;
 using YapGetirCom.Model;
+using YapGetirCom.UI.MVC.Models;
 
 namespace YapGetirCom.UI.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        //private IUserService _userService;
-        //public HomeController(IUserService userService)
-        //{
-        //    _userService = userService;
-        //}
+
         // GET: Home
+        private IRecipeService _recipeService;
+        private IRestaurantService _restaurantService;
+
+        public HomeController(IRecipeService recipeService, IRestaurantService restaurantService)
+        {
+            _recipeService = recipeService;
+            _restaurantService = restaurantService;
+        }
         public ActionResult Index()
         {
-            //List<User> users = _userService.GetAll().ToList();
-            //if (users != null)
-            //{
-            //    return View(users);
-            //}
+            HomeVM homeVm = new HomeVM();
 
-            return View();
+            List<Recipe> recipes = _recipeService.GetAll().ToList();
+            
+            foreach (Recipe item in recipes)
+            {
+                if (item.IsFavourite == true)
+                {
+                    homeVm.Recipes.Add(item);
+                }
+            }
+
+            List<Restaurant> restaurants = _restaurantService.GetAll().ToList();
+            foreach (Restaurant item in restaurants)
+            {
+                if (item.IsFavourite == true)
+                {
+                    homeVm.Restaurants.Add(item);
+                }
+            }
+
+            return View(homeVm);
         }
     }
 }

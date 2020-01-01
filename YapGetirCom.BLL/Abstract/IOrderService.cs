@@ -9,5 +9,6 @@ namespace YapGetirCom.BLL.Abstract
 {
     public interface IOrderService : IBaseService<Order>
     {
+        List<Order> GetByRestaurantID(int id);
     }
 }

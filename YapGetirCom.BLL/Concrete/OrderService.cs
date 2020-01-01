@@ -45,5 +45,10 @@ namespace YapGetirCom.BLL.Concrete
         {
             return _orderRepository.GetAll();
         }
+
+        public List<Order> GetByRestaurantID(int id)
+        {
+            return _orderRepository.GetAll(x => x.RestaurantID==id).ToList();
+        }
     }
 }

@@ -251,7 +251,7 @@ namespace YapGetirCom.DAL
             {
                 new Product(){
                     ProductName="Yumurta",
-                    CategoryID = 7,
+                    CategoryID = 10,
                     Image="yumurta.jpg",
                     SupplierID=1,
                     Price=15,
@@ -262,7 +262,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Tam Yağlı Süt",
-                    CategoryID = 7,
+                    CategoryID = 10,
                     Image="sut1.jpg",
                     SupplierID=1,
                     Price=4,
@@ -273,7 +273,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Yarım Yağlı Süt",
-                    CategoryID = 7,
+                    CategoryID = 10,
                     Image="sut1.jpg",
                     SupplierID=1,
                     Price=3.75m,
@@ -284,7 +284,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Tavuk (Büyük Boy)",
-                    CategoryID = 6,
+                    CategoryID = 9,
                     Image="tavukL.jpg",
                     SupplierID=3,
                     Price=17.75m,
@@ -295,8 +295,8 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Tavuk (Orta Boy)",
-                    CategoryID = 6,
-                    Image="tavukM.jpg",
+                    CategoryID = 9,
+                    Image="tavukL.jpg",
                     SupplierID=3,
                     Price=12.75m,
                     Unit="Adet",
@@ -306,8 +306,8 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Tavuk (Küçük Boy)",
-                    CategoryID = 6,
-                    Image="tavukS.jpg",
+                    CategoryID = 9,
+                    Image="tavukL.jpg",
                     SupplierID=3,
                     Price=7.75m,
                     Unit="Adet",
@@ -317,7 +317,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Dana Kuşbaşı",
-                    CategoryID = 6,
+                    CategoryID = 9,
                     Image="kusbasi.jpg",
                     SupplierID=3,
                     Price=50M,
@@ -328,7 +328,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Marul",
-                    CategoryID = 8,
+                    CategoryID = 11,
                     Image="marul.jpg",
                     SupplierID=3,
                     Price=1.75m,
@@ -339,7 +339,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Kuru Soğan",
-                    CategoryID = 8,
+                    CategoryID = 11,
                     Image="kurusagan.jpg",
                     SupplierID=2,
                     Price=3.75m,
@@ -350,7 +350,7 @@ namespace YapGetirCom.DAL
                 },
                 new Product(){
                     ProductName="Çilek",
-                    CategoryID = 9,
+                    CategoryID = 12,
                     Image="çilek.jpg",
                     SupplierID=2,
                     Price=7.75m,
@@ -362,7 +362,7 @@ namespace YapGetirCom.DAL
 
                 new Product(){
                     ProductName="Muz",
-                    CategoryID = 9,
+                    CategoryID = 12,
                     Image="muz.jpg",
                     SupplierID=2,
                     Price=6.75m,
@@ -547,9 +547,22 @@ namespace YapGetirCom.DAL
                 },
                 new UnitAndProduct()
                 {
+                    ProductID = 4,
+                    UnitOfProductID = 10,
+                    Price = 0.01m,
+                },
+                new UnitAndProduct()
+                {
                     ProductID = 5,
                     UnitOfProductID = 8,
                     Price = 25M,
+
+                },
+                new UnitAndProduct()
+                {
+                    ProductID = 5,
+                    UnitOfProductID = 8,
+                    Price = 0.01m,
 
                 },
                 new UnitAndProduct()
@@ -561,66 +574,26 @@ namespace YapGetirCom.DAL
                 },
                 new UnitAndProduct()
                 {
-                    ProductID = 7,
-                    UnitOfProductID = 2,
-                    Price = 1M,
-
-                },
-                new UnitAndProduct()
-                {
-                    ProductID = 8,
-                    UnitOfProductID = 3,
-                    Price = 1M,
-
-                },
-                new UnitAndProduct()
-                {
-                    ProductID = 2,
-                    UnitOfProductID = 5,
-                    Price = 1M,
-
-                },
-                new UnitAndProduct()
-                {
-                    ProductID = 3,
-                    UnitOfProductID = 6,
-                    Price = 1M,
-
-                },
-                new UnitAndProduct()
-                {
-                    ProductID = 4,
-                    UnitOfProductID = 7,
-                    Price = 1M,
-                },
-                    new UnitAndProduct()
-                {
-                    ProductID = 5,
-                    UnitOfProductID = 8,
-                    Price = 1M,
-
-                },
-                new UnitAndProduct()
-                {
                     ProductID = 6,
                     UnitOfProductID = 8,
-                    Price = 1M,
+                    Price = 0.01m,
 
                 },
                 new UnitAndProduct()
                 {
                     ProductID = 7,
                     UnitOfProductID = 10,
-                    Price = 0.09M,
+                    Price = 0.05M,
 
                 },
                 new UnitAndProduct()
                 {
                     ProductID = 8,
-                    UnitOfProductID = 8,
+                    UnitOfProductID = 9,
                     Price = 3M,
-                },
 
+                },
+                
                 new UnitAndProduct()
                 {
                     ProductID = 9,
@@ -640,7 +613,7 @@ namespace YapGetirCom.DAL
                     ProductID = 10,
                     UnitOfProductID = 8,
                     Price = 1M,
-                },
+                },    
                 new UnitAndProduct()
                 {
                     ProductID = 11,

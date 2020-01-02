@@ -16,9 +16,7 @@ namespace YapGetirCom.DAL.Mapping
                 .IsRequired()
                 .HasColumnType("date");
 
-            Property(x => x.RequestedDate)
-                .IsRequired()
-                .HasColumnType("date");
+            
 
             Property(x => x.Address)
                 .IsRequired()

@@ -17,7 +17,7 @@
                                     <th>Ürün ID</th>
                                     <th>Ürün Adı</th>
                                     <th>Fiyat</th>
-
+                                    
                                     <th>Adet</th>
                                     <th>Toplam Fiyat</th>
                                     <th>İşlem</th>
@@ -34,7 +34,7 @@
                                     <td style='line-height:40px'>
                                         item.UnitPrice
                                     </td>
-
+                                  
                                     <td style='line-height:40px'>
                                         item.Quantity
                                     </td>
@@ -56,7 +56,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="col-lg-6 col-lg-offset-6">
-                        <label>Ödemeniz Gereken Toplam Tutar : <span id="totalCount"></span> $</label>
+                        <label>Ödemeniz Gereken Toplam Tutar : <span id="totalCount"></span> ₺</label>
                     </div>
                 </div>
             </div>
@@ -70,11 +70,19 @@
             {
                 <table width="100%">
                     <tr>
+                        <td>Restoran Seçimi</td>
+                        <td>Aşçı Seçimi</td>
+                        <td>Odeme Tipi</td>
+                        <td>Adres</td>
+                        <td>Teslimat Tarihi</td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td>@Html.DropDownListFor(x => x.RestaurantID, ViewBag.Restaurants as SelectList, "--Restaurant  Secimi", new { @class = "form-control", id = "restaurants" })</td>
                         <td>@Html.DropDownListFor(x => x.CookID, ViewBag.Cooks as SelectList, "--Aşçı Secimi", new { @class = "form-control", id = "cooks" })</td>
                         <td>@Html.DropDownListFor(x => x.PaymentID, ViewBag.Payments as SelectList, "--Ödeme Tipi Secimi", new { @class = "form-control", id = "payments" })</td>
                         <td>@Html.TextAreaFor(x => x.Address)</td>
-                        <td>@Html.TextBoxFor(x => x.RequestedDate)</td>
+                        <td>@Html.TextBoxFor(x => x.RequestedDate,new {@class="form-control",type="datetime-local" ,min="2020-01-02"})</td>
                         <td><button class="btn btn-user">Siparisi Tamamla</button></td>
                     </tr>
                 </table>

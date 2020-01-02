@@ -10,6 +10,7 @@
             <td>Aşçı</td>
             <td>Tutar</td>
             <td>Adres</td>
+            <td>Teslim Edilecek Tarih</td>
             <td>Siparis Durumu</td>
             <td></td>
         </tr>
@@ -23,6 +24,7 @@
                 <td>@item.Cook.FirstName @item.Cook.LastName</td>
                 <td>@item.OrderPrice</td>
                 <td>@item.Address</td>
+                <td>@item.RequestedDate</td>
                 <td>@item.OrderStatus</td>
                 <td>
                     @if (item.OrderStatus == "Onaylanmadı")

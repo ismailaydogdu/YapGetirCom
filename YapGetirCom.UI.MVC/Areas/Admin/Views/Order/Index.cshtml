@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Order>
 @{
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -7,19 +7,27 @@
         <tr>
             <td>Ad Soyad</td>
             <td>Tarif</td>
+            <td>Aşçı</td>
+            <td>Tutar</td>
+            <td>Adres</td>
             <td>Siparis Durumu</td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
-        @for (int i = 0; i < 4; i++)
+        @foreach (Order item in Model)
         {
+            <tr>
+                <td>@item.User.FirstName @item.User.LastName</td>
+                <td>@item.Recipe.RecipeName</td>
+                <td>@item.Cook.FirstName @item.Cook.LastName</td>
+                <td>@item.OrderPrice</td>
+                <td>@item.Address</td>
+                <td>@item.OrderStatus</td>
+                <td><button class="btn btn-success">Onayla</button><button class="btn btn-info">Bitir</button><button class="btn btn-danger">İptal</button></td>
 
-    <tr>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
-        
-    </tr>
+            </tr>
+        }
         }
     </tbody>
 

@@ -11,5 +11,6 @@ namespace YapGetirCom.BLL.Abstract
     public interface IUserService : IBaseService<User>
     {
         User Login(LoginDTO loginDto);
+        User RestaurantLogin(LoginDTO loginDto);
     }
 }

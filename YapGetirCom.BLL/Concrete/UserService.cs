@@ -79,5 +79,26 @@ namespace YapGetirCom.BLL.Concrete
                 return null;
             }
         }
+        public User RestaurantLogin(LoginDTO loginDto)
+        {
+
+            User user = _userRepository.Get(x => x.EMail == loginDto.Email && x.UserTypeID==2);
+
+            if (user != null)
+            {
+                if (user.Password == loginDto.Password)
+                {
+                    return user;
+                }
+                else
+                {
+                     throw new Exception("Hatalı parola");
+                }
+            }
+            else
+            {
+                throw new Exception("Kullanıcı bulunamadı");
+            }
+        }
     }
 }

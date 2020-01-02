@@ -1,22 +1,19 @@
-﻿@{
+﻿@model List<Campaign>
+
+@{
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
-<!-- Bootstrap core CSS -->
-<link href="~/css/bootstrap.min.css" rel="stylesheet">
-<link href="~/css/font-awesome.min.css" rel="stylesheet">
-<link href="~/css/animsition.min.css" rel="stylesheet">
-<link href="~/css/animate.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="~/css/CampaignStyle.css" rel="stylesheet">
+
 
 <div class="page-wrapper">
     <!-- top Links -->
     <!-- end:Top links -->
     <!-- start: Inner page hero -->
-    <div class="inner-page-hero bg-image space-md" data-image-src="http://placehold.it/1670x480">
+    <div class="inner-page-hero" style="background-image: url('../../images/campaigns/kampanya.jpg'); background-repeat: no-repeat; background-position: center;">
+   
         <div class="container text-xs-center m-b-20">
             <h1 class="font-white">Kampanyalarımız</h1>
-            <p class="font-white">Find restaurants, specials, and coupons for free</p>
+            <p class="font-white">Restoranların ve ürünlerin özel indirimlerini keşfedin.</p>
         </div>
     </div>
     <!-- end:Inner page hero -->
@@ -26,33 +23,28 @@
                 <div class="col-md-5 offset-md-1 col-sm-6">
                     <div class="pricing-box">
                         <span class="price">
-                            <span class="currency">₺</span>9
+                            <span class="currency"></span>%20
                         </span>
-                        <h2>1.Kampanya Alanı</h2>
-                        <p>Tarif Başlık</p>
+                        <h2>Gece Kampanyası</h2>
                         <ul data-cloneable="" data-group="" class="">
-                            <li>Ürün</li>
-                            <li>Malzeme</li>
-                            <li>Açıklama</li>
-                            <li> </li>
+                            <li>Kampanya tüm ürünlerde geçerlidir.</li>
+                            <li>00:00 - 08:00 arasında verilen tüm siparişlerde geçerli %20 indirim fırsatı. </li>
                         </ul>
-                        <div data-group=""> <a href="Pay.html" class="btn theme-btn">Detayları gör / Yada Sipariş ver</a> </div>
+                        <div data-group=""> <a href="/Home/Index" class="btn theme-btn">Detayları gör / Yada Sipariş ver</a> </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-6">
                     <div class="pricing-box">
                         <span class="price">
-                            <span class="currency">₺</span>12
+                            <span class="currency"></span> 50₺
                         </span>
-                        <h2>2.Kampanya</h2>
-                        <p>Tarif Başlık</p>
+                        <h2>Yılbaşı Kampanyası</h2>
                         <ul data-cloneable="" data-group="" class="">
-                            <li>Ürün</li>
-                            <li>Malzeme</li>
-                            <li>Açıklama</li>
+                            <li>Kampanya tüm ürünlerde geçerlidir.</li>
+                            <li>23/12/2019 - 23/12/2019 tarihleri arasında 200lira üstü siparişlerde geçerli 50lira indirim fırsatı.</li>
                             <li> </li>
                         </ul>
-                        <div data-group=""> <a href="Pay.html" class="btn theme-btn">Detayları gör / Yada Sipariş ver</a> </div>
+                        <div data-group=""> <a href="/Home/Index" class="btn theme-btn">Detayları gör / Yada Sipariş ver</a> </div>
                     </div>
                 </div>
             </div>
@@ -90,44 +82,4 @@
         </div>
         <!-- end:Container -->
     </div>
-    <section class="app-section">
-        <div class="app-wrap">
-            <div class="container">
-                <div class="row text-img-block text-xs-left">
-                    <div class="container">
-                        <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
-                            <figure> <img src="images/app.png" alt="Right Image"> </figure>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 left-text">
-                            <h3>Pek Yakında Sizlerle :)</h3>
-                            <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
-                            <div class="social-btns">
-                                <a href="#" class="app-btn apple-button clearfix">
-                                    <div class="pull-left"><i class="fa fa-apple"></i> </div>
-                                    <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
-                                </a>
-                                <a href="#" class="app-btn android-button clearfix">
-                                    <div class="pull-left"><i class="fa fa-android"></i> </div>
-                                    <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/tether.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/animsition.min.js"></script>
-    <script src="~/js/bootstrap-slider.min.js"></script>
-    <script src="~/js/jquery.isotope.min.js"></script>
-    <script src="~/js/headroom.js"></script>
-    <script src="~/js/foodpicky.min.js"></script>
-    </body>
-
-    </html>
+</div>

@@ -33,7 +33,7 @@ namespace YapGetirCom.UI.MVC.Areas.Admin.Controllers
             catch (Exception ex)
             {
 
-                ViewBag.IsSucces = ex;
+                ViewData["as"] = ex.Message;
                 return View();
             }
             

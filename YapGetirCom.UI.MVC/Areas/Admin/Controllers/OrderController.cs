@@ -21,5 +21,11 @@ namespace YapGetirCom.UI.MVC.Areas.Admin.Controllers
             List<Order> orders = _orderService.GetByRestaurantID((Session["restaurant"] as Restaurant).RestaurantID);
             return View(orders);
         }
+
+        public ActionResult OrderUpdate(string orderStatus,int orderID)
+        {
+            _orderService.UpdateOrderStatus(orderStatus, orderID);
+            return RedirectToAction("Index", "Order");
+        }
     }
 }

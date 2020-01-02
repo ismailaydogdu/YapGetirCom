@@ -10,5 +10,6 @@ namespace YapGetirCom.BLL.Abstract
     public interface IOrderService : IBaseService<Order>
     {
         List<Order> GetByRestaurantID(int id);
+        void UpdateOrderStatus(string orderStatus,int orderID);
     }
 }

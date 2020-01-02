@@ -24,7 +24,27 @@
                 <td>@item.OrderPrice</td>
                 <td>@item.Address</td>
                 <td>@item.OrderStatus</td>
-                <td><button class="btn btn-success">Onayla</button><button class="btn btn-info">Bitir</button><button class="btn btn-danger">İptal</button></td>
+                <td>
+                    @if (item.OrderStatus == "Onaylanmadı")
+                    {
+
+                        @Html.ActionLink("Onayla", "OrderUpdate", new { orderStatus = "Onayla", orderID = item.OrderID }, new { @class = "btn btn-success" })
+                    }
+                    @*<button class="btn btn-success">Onayla</button>*@
+
+                    @if (item.OrderStatus=="Onayla")
+                    {
+
+                    @Html.ActionLink("Bitir", "OrderUpdate", new { orderStatus = "Bitir", orderID = item.OrderID }, new { @class = "btn btn-info" })
+                    }
+                    @*<button class="btn btn-info">Bitir</button>*@
+                    @if (item.OrderStatus == "Onaylanmadı")
+                    {
+
+                        @Html.ActionLink("İptal", "OrderUpdate", new { orderStatus = "İptal", orderID = item.OrderID }, new { @class = "btn btn-danger" })
+                        @*<button class="btn btn-danger">İptal</button>*@
+                    }
+                </td>
 
             </tr>
         }

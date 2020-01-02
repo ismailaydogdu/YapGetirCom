@@ -50,5 +50,13 @@ namespace YapGetirCom.BLL.Concrete
         {
             return _orderRepository.GetAll(x => x.RestaurantID==id).ToList();
         }
+
+        public void UpdateOrderStatus(string orderStatus,int orderID)
+        {
+            Order order = Get(orderID);
+            order.OrderStatus = orderStatus;
+            order.UpdateDate = DateTime.Now;
+            Update(order);
+        }
     }
 }
